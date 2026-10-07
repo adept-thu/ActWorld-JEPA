@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite ActWorld-JEPA and the upstream Drive-JEPA work."
+title: "ActWorld-JEPA: Action-Conditioned Joint-Embedding World Modeling for Autonomous End-to-End Driving"
+type: software
+authors:
+  - family-names: Zhang
+    given-names: Shengkai
+  - family-names: Song
+    given-names: Ziying
+repository-code: "https://github.com/adept-thu/ActWorld-JEPA"
+license: Apache-2.0
+version: 1.0.0
+date-released: 2026-10-07

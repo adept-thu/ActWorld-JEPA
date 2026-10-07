@@ -1,0 +1,20 @@
+_target_: navsim.agents.actworld_jepa.actworld_agent.ActWorldJEPAAgent
+_convert_: 'all'
+
+config:
+  _target_: navsim.agents.actworld_jepa.actworld_config.ActWorldJEPAConfig
+  _convert_: 'all'
+
+  trajectory_sampling:
+    _target_: nuplan.planning.simulation.trajectory.trajectory_sampling.TrajectorySampling
+    _convert_: 'all'
+    time_horizon: 4
+    interval_length: 0.5
+
+  latent: False
+  baseline_checkpoint_path: ''
+  actworld_freeze_drive_jepa: True
+  actworld_score_workers: 2
+
+checkpoint_path: ''
+lr: 1e-4

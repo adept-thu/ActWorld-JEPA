@@ -1,0 +1,18 @@
+name: static-checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  release-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+      - run: python tools/audit_release.py
+      - run: python -m compileall -q navsim/navsim navsim/scripts tools tests
+      - run: pip install pytest
+      - run: pytest -q tests

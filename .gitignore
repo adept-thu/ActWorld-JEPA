@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Experiments and private configuration
+.env
+.env.*
+wandb/
+outputs/
+multirun/
+lightning_logs/
+*.log
+
+# Datasets, caches, weights, and generated submissions
+data/
+dataset/
+datasets/
+metric_cache/
+train_metric_cache/
+sensor_blobs/
+navsim_logs/
+*.ckpt
+*.pt
+*.pth
+*.pkl
+*.pickle
+*.npz
+submission*.zip
+
+# Keep the small released proposal-anchor table.
+!navsim/data/
+!navsim/data/8192.npy
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
