@@ -35,9 +35,11 @@ by the best frozen result:
 
 It does **not** contain datasets, metric caches, raw evaluation CSVs,
 per-scene benchmark outputs, credentials, local machine paths, failed
-experiments, old source backups, or large learned artifacts. Checkpoints and
-frozen scorers are distributed separately; their exact names, sizes, and
-hashes are recorded in [ARTIFACTS.md](ARTIFACTS.md).
+experiments, or old source backups. The checkpoint and frozen inference
+artifacts are distributed as assets of the
+[NAVSIM v1 R383 release](https://github.com/adept-thu/ActWorld-JEPA/releases/tag/navsim-v1-r383);
+their exact names, sizes, and hashes are recorded in
+[ARTIFACTS.md](ARTIFACTS.md).
 
 ## Installation
 
@@ -70,26 +72,23 @@ export VJEPA2_CHECKPOINT="$NAVSIM_EXP_ROOT/Drive-JEPA-cache/vitl_merge_3dataset_
 
 ## Reproducing R383 inference
 
-Place the seven ActWorld-JEPA artifacts listed in [ARTIFACTS.md](ARTIFACTS.md)
-in a local artifact directory. If the R383 wrapper has not been supplied,
-build it from the two frozen NAVTRAIN selector artifacts:
-
-```bash
-cd navsim
-python scripts/artifacts/build_r383_selector.py \
-  --r333 /path/to/r333_best_followup_artifact.pkl \
-  --r370 /path/to/r370_group_oof_mean_artifact.pkl \
-  --output /path/to/r383_r381_guard_artifact.pkl
-```
+Download `actworld_jepa_navsim_v1_r383_bundle.tar.gz` from the
+[NAVSIM v1 R383 release](https://github.com/adept-thu/ActWorld-JEPA/releases/tag/navsim-v1-r383)
+and extract its five files into a local artifact directory. Verify the archive
+and extracted files against [ARTIFACTS.md](ARTIFACTS.md). The released
+checkpoint is an inference-only export: all 656 model tensors are byte-for-byte
+equal after loading to those in the evaluated training checkpoint, while
+optimizer, callback, and local-path metadata have been removed. The released
+selector is self-contained and does not require the original R333/R370 files.
 
 Then export the paths consumed by the final launcher and run it:
 
 ```bash
-export ACTWORLD_CHECKPOINT=/path/to/last.ckpt
+export ACTWORLD_CHECKPOINT=/path/to/actworld_jepa_navsim_v1_r383.ckpt
 export ACTWORLD_LATENT_VERIFIER=/path/to/ridge_strict_verifier.pkl
 export ACTWORLD_CANDIDATE_SCORER=/path/to/multidomain_safe_oracle_set_head.pt
 export ACTWORLD_TREE_META_SCORER=/path/to/aggressive_setwise_cascade_scorer.pkl
-export ACTWORLD_R383_SELECTOR=/path/to/r383_r381_guard_artifact.pkl
+export ACTWORLD_R383_SELECTOR=/path/to/actworld_jepa_navsim_v1_r383_selector.pkl
 export ACTWORLD_OUTPUT_DIR=/path/to/output
 
 bash scripts/evaluation/eval_actworld_jepa_r383.sh
@@ -98,6 +97,9 @@ bash scripts/evaluation/eval_actworld_jepa_r383.sh
 The launcher fails before evaluation when a required file or environment
 variable is missing. It uses the official NAVSIM v1 submission schema and
 also fails closed on missing, duplicate, or unexpected scene tokens.
+
+The `.ckpt`, `.pt`, and `.pkl` files use Python/PyTorch serialization. Verify
+their SHA256 values before use and load them only from this official release.
 
 ## Training protocol
 
