@@ -62,7 +62,7 @@ def initialize_ray(
         number_of_nodes = int(os.environ[env_var_num_nodes])
         master_node_ip = os.environ[env_var_master_node_ip].split(":")[0]
         redis_password = os.environ[env_var_master_node_password].split(":")[0]
-        logger.info(f"Connecting as part of a cluster at: {master_node_ip} with password: {redis_password}!")
+        logger.info(f"Connecting as part of a cluster at: {master_node_ip}!")
         # Connect to cluster, follow to https://docs.ray.io/en/latest/package-ref.html for more info
         ray.init(
             address="auto",
@@ -77,7 +77,7 @@ def initialize_ray(
         logger.info("Starting ray local!")
         ray.init(
             num_cpus=number_of_cpus_per_node,
-            dashboard_host="0.0.0.0",
+            dashboard_host="127.0.0.1",
             local_mode=local_mode,
             log_to_driver=log_to_driver,
         )

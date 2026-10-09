@@ -14,8 +14,8 @@ defaults:
   - _self_
   - override train_test_split: navtest
 
-"team_name": ke # The team name
-"authors": ke_guo # The team members
-"email": u3006612@connect.hku.hk # email of the corresponding team member
-"institution": ntu # affiliation of the team
-"country": Singapore # country or region of the team, e.g. China
+"team_name": ??? # The team name
+"authors": ??? # The team members
+"email": ??? # Email of the corresponding team member
+"institution": ??? # Affiliation of the team
+"country": ??? # Country or region of the team, e.g. China
