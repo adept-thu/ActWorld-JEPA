@@ -1,7 +1,7 @@
 # Artifact manifest
 
 Large learned files are distributed through the
-[NAVSIM v1 R383 release](https://github.com/adept-thu/ActWorld-JEPA/releases/tag/navsim-v1-r383)
+[NAVSIM v1 R383 release](https://github.com/adept-thu/ActWorld-JEPA/releases/tag/navsim-v1-r383.1)
 rather than committed to Git. Download and verify the release archive:
 
 | Release asset | Bytes | SHA256 |

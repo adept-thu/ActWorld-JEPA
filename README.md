@@ -37,7 +37,7 @@ It does **not** contain datasets, metric caches, raw evaluation CSVs,
 per-scene benchmark outputs, credentials, local machine paths, failed
 experiments, or old source backups. The checkpoint and frozen inference
 artifacts are distributed as assets of the
-[NAVSIM v1 R383 release](https://github.com/adept-thu/ActWorld-JEPA/releases/tag/navsim-v1-r383);
+[NAVSIM v1 R383 release](https://github.com/adept-thu/ActWorld-JEPA/releases/tag/navsim-v1-r383.1);
 their exact names, sizes, and hashes are recorded in
 [ARTIFACTS.md](ARTIFACTS.md).
 
@@ -73,7 +73,7 @@ export VJEPA2_CHECKPOINT="$NAVSIM_EXP_ROOT/Drive-JEPA-cache/vitl_merge_3dataset_
 ## Reproducing R383 inference
 
 Download `actworld_jepa_navsim_v1_r383_bundle.tar.gz` from the
-[NAVSIM v1 R383 release](https://github.com/adept-thu/ActWorld-JEPA/releases/tag/navsim-v1-r383)
+[NAVSIM v1 R383 release](https://github.com/adept-thu/ActWorld-JEPA/releases/tag/navsim-v1-r383.1)
 and extract its five files into a local artifact directory. Verify the archive
 and extracted files against [ARTIFACTS.md](ARTIFACTS.md). The released
 checkpoint is an inference-only export: all 656 model tensors are byte-for-byte
