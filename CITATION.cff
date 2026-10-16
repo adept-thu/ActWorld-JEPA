@@ -1,13 +1,27 @@
 cff-version: 1.2.0
 message: "If you use this code, please cite ActWorld-JEPA and the upstream Drive-JEPA work."
-title: "ActWorld-JEPA: Action-Conditioned Joint-Embedding World Modeling for Autonomous End-to-End Driving"
+title: "ActWorld-JEPA: Action-Conditioned JEPA World Models Meet Latent Planning for End-to-End Autonomous Driving"
 type: software
 authors:
-  - family-names: Zhang
-    given-names: Shengkai
   - family-names: Song
     given-names: Ziying
+  - family-names: Zhang
+    given-names: Shengkai
+  - family-names: Jia
+    given-names: Caiyan
+  - family-names: Yang
+    given-names: Lei
+  - family-names: Liu
+    given-names: Lin
+  - family-names: Wang
+    given-names: Li
+  - family-names: Luo
+    given-names: Yadan
+  - family-names: Wang
+    given-names: Linhan
+  - family-names: Lv
+    given-names: Chen
 repository-code: "https://github.com/adept-thu/ActWorld-JEPA"
 license: Apache-2.0
-version: 1.0.0
-date-released: 2026-10-07
+version: 2.0.0
+date-released: 2026-10-16

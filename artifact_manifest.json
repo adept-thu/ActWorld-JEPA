@@ -1,0 +1,47 @@
+[
+  {
+    "filename": "factor005.pkl",
+    "bytes": 880210,
+    "sha256": "c7fc59cce723c466258786b37cef24f9690c6f0d65062dc2b6938d87dbfc55bd",
+    "private_metadata_scan": "passed"
+  },
+  {
+    "filename": "strict_variant_selector.pkl",
+    "bytes": 51157412,
+    "sha256": "57952fda90142b2ac037318ead0bd0c6a32a2d388ddebdb33e8deae53fa82526",
+    "private_metadata_scan": "passed"
+  },
+  {
+    "filename": "multicomponent_gate_selector.pkl",
+    "bytes": 47544942,
+    "sha256": "4fdb2757bde6b29eb3a893168c4c0d7f14834709d6759ab407332aaf9484fc55",
+    "private_metadata_scan": "passed"
+  },
+  {
+    "filename": "temporal_fcts_pair_head.pkl",
+    "bytes": 46919762,
+    "sha256": "280e0d6e6549b56533718c5b974724a4976d740b8dca5132123ec18c305ed1be",
+    "private_metadata_scan": "passed"
+  },
+  {
+    "filename": "temporal_fcts_head.pt",
+    "bytes": 1173202,
+    "sha256": "0f45a9347a0876adea9859e9956594af995fbd4bd3e99b1efef6f7cee530283d",
+    "private_metadata_scan": "passed"
+  },
+  {
+    "filename": "actworld_nuscenes_r13.pth",
+    "bytes": 353188947,
+    "sha256": "8e79cbaac8f240d81af5c3251e791f220abef639f1089966ebc84be1fcf802d2"
+  },
+  {
+    "filename": "actworld_navsim_v2.ckpt",
+    "bytes": 1257389971,
+    "sha256": "10f8652dde2e7b1d8b3899a63d7a4dfb0d96c5dc5afa9cd2a5face3dc065d319"
+  },
+  {
+    "filename": "actworld_jepa_navsim_v1_r383_bundle.tar.gz",
+    "bytes": 1767893625,
+    "sha256": "996774c139f550cac4d4207b6f4b6c56ad29e31eeab5357595459b460bf4a581"
+  }
+]

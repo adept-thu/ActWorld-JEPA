@@ -1,0 +1,61 @@
+_target_: navsim.agents.actworld_jepa.actworld_agent.ActWorldJEPAAgent
+_convert_: 'all'
+
+config:
+  _target_: navsim.agents.actworld_jepa.actworld_config.ActWorldJEPAConfig
+  _convert_: 'all'
+
+  trajectory_sampling:
+    _target_: nuplan.planning.simulation.trajectory.trajectory_sampling.TrajectorySampling
+    _convert_: 'all'
+    time_horizon: 4
+    interval_length: 0.5
+
+  latent: False
+  baseline_checkpoint_path: ''
+  actworld_freeze_drive_jepa: true
+  actworld_score_workers: 2
+  actworld_score_timeout_seconds: 600.0
+  actworld_score_slow_log_seconds: 60.0
+  # Safe inference/default value.  Fresh F2 Stage-A training fails preflight
+  # unless this is explicitly overridden to true.
+  actworld_future_latent_grounding: false
+  actworld_training_stage: critic
+  # F2 is an opt-in Stage-A critic core; F2-aware Stage B is not implemented.
+  # Its fixed preregistered coefficients are stated here so a Hydra archive is
+  # self-describing and the runtime can reject drift.  An F2 launch must also
+  # explicitly override future grounding=true, baseline_checkpoint_path, the
+  # agent lr to 5e-5, and trainer max_epochs to 4; defaults remain legacy-safe.
+  actworld_critic_variant: legacy
+  actworld_f2_aggregate_bce_weight: 1.0
+  actworld_f2_top_regret_margin_weight: 1.0
+  actworld_f2_top_regret_margin: 0.2
+  actworld_f2_safe_unsafe_margin_weight: 1.0
+  actworld_f2_safe_unsafe_margin: 0.5
+  actworld_f2_nine_channel_bce_weight: 1.0
+  actworld_f2_collision_bce_weight: 1.0
+  actworld_f2_historical_latent_weight: 0.25
+  actworld_f2_future_latent_weight: 0.25
+  actworld_stage_a_checkpoint_path: ''
+  # Explicitly retain the released Drive-JEPA planning objective in both
+  # incremental stages.  Keeping this key in Hydra's structured agent config
+  # allows guarded launchers to archive and override the otherwise identical
+  # dataclass default without using an untracked +key insertion.
+  actworld_drive_jepa_planning_loss_weight: 1.0
+  # Generic Stage-1/Stage-2 launcher controls.  These mirror the dataclass so
+  # Hydra's struct mode can validate both the frozen Stage-1 values and the
+  # selective Stage-2 overrides before model construction.
+  actworld_stage1_checkpoint_path: ''
+  actworld_selective_unfreeze_planning_top: false
+  actworld_backbone_top_blocks: 2
+  actworld_backbone_lr_scale: 0.01
+  actworld_base_lr_scale: 0.1
+  actworld_actor_improvement_weight: 1.0
+  actworld_actor_trust_weight: 0.1
+  actworld_actor_smoothness_weight: 0.05
+  actworld_gate_loss_weight: 1.0
+  actworld_gate_rank_weight: 0.5
+  actworld_actor_rank_temperature: 1.0
+
+checkpoint_path: ''
+lr: 1e-4

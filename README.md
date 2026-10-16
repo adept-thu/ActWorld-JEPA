@@ -1,123 +1,84 @@
+<div align="center">
+
 # ActWorld-JEPA
+### Action-Conditioned JEPA World Models Meet Latent Planning<br>for End-to-End Autonomous Driving
 
-Official NAVSIM v1 code release for **ActWorld-JEPA: Action-Conditioned
-Joint-Embedding World Modeling for Autonomous End-to-End Driving**.
+**Ziying Song · Shengkai Zhang · Caiyan Jia · Lei Yang · Lin Liu · Li Wang · Yadan Luo · Linhan Wang · Chen Lv**
 
-ActWorld-JEPA starts from the Drive-JEPA perception-based planner and extends
-JEPA from visual representation learning into planning. Each candidate
-trajectory conditions a latent future rollout, current and predicted-future
-features interact at candidate level, and a future-consistent selector ranks
-the original Drive-JEPA proposal set. The simulator is not called in the
-online planning loop.
+[![Project page](https://img.shields.io/badge/Project-Page-167D7F)](https://adept-thu.github.io/ActWorld-JEPA/)
+[![Hugging Face](https://img.shields.io/badge/🤗-Checkpoints-FFD21E)](https://huggingface.co/shengkaizhang/ActWorld-JEPA)
+[![License](https://img.shields.io/badge/Code-Apache--2.0-blue)](LICENSE)
 
-## NAVSIM v1 result
+</div>
 
-The frozen `R383` release produced the following NAVSIM v1 result:
+ActWorld-JEPA predicts action-conditioned future representations and uses them
+to improve trajectory planning. **PC-JEPA** connects candidate plans to latent
+future outcomes; **R³** performs relational residual reranking. The release
+contains the frozen main deployments for NAVSIM v1, NAVSIM v2, and nuScenes.
 
-| NC | DAC | DDC | EP | TTC | Comfort | PDMS |
-|---:|---:|---:|---:|---:|---:|---:|
-| 0.990120 | 0.984192 | 0.944014 | 0.922415 | 0.960563 | 0.999177 | **0.940721** |
+![ActWorld-JEPA framework](docs/assets/framework.png)
 
-The generated submission contains 12,146 trajectories. Its SHA256 is
-`ff482967953a5de886b03638c953c24fb7740d3f62ebc15867b515f6fd69998d`.
-See [RESULTS.md](RESULTS.md) for the evaluation contract.
+## Main results
 
-## Release scope
+| Benchmark | Released deployment | Metric | Result |
+|:--|:--|:--|--:|
+| NAVSIM v1 NAVTEST | R383 | Leaderboard PDMS | **90.07**† |
+| NAVSIM v2 NAVTEST | Aligned actor + multicomponent selector | Corrected EPDMS | **91.6** |
+| NAVSIM v2 NAVHARD | Frozen two-stage temporal deployment | Corrected combined EPDMS | **42.7** |
+| nuScenes validation | Round 13, inference repeat 04 | 6 s L2 ↓ | **2.3945 m** |
+| nuScenes validation | Same deployment | Mean 1–6 s L2 / box collision ↓ | **1.2045 m / 0.7638%** |
 
-This repository intentionally contains only the NAVSIM v1 implementation used
-by the best frozen result:
+† The authors identify R383 as the 90.07 leaderboard submission (local 90.05).
+The earlier public R383 release records a different local evaluation, 94.0721;
+that record is preserved rather than silently relabelled. See
+[evaluation protocols](docs/EVALUATION_PROTOCOLS.md) for the distinction.
 
-- ActWorld-JEPA model, losses, planning-JEPA rollout, and selection code;
-- the required Drive-JEPA perception-based base implementation;
-- the NAVSIM v1.1 devkit code and the vendored V-JEPA 2 source dependency;
-- the exact R383 submission launcher and artifact builder;
-- artifact hashes and a release audit utility.
+NAVSIM v2 uses the human-filter aggregation correction discussed in
+[official issue #151](https://github.com/autonomousvision/navsim/issues/151).
+NAVTEST 91.6 and NAVHARD 42.7 are rescored fixed predictions; legacy results
+88.2 and 39.2 are not directly comparable without matching evaluator revisions.
+nuScenes repeat 04 is a selected repeated-inference result, not a separate
+checkpoint. Exact six-horizon values and paired baselines are documented in
+[evaluation protocols](docs/EVALUATION_PROTOCOLS.md).
 
-It does **not** contain datasets, metric caches, raw evaluation CSVs,
-per-scene benchmark outputs, credentials, local machine paths, failed
-experiments, or old source backups. The checkpoint and frozen inference
-artifacts are distributed as assets of the
-[NAVSIM v1 R383 release](https://github.com/adept-thu/ActWorld-JEPA/releases/tag/navsim-v1-r383.1);
-their exact names, sizes, and hashes are recorded in
-[ARTIFACTS.md](ARTIFACTS.md).
+## Code and checkpoints
 
-## Installation
+| Benchmark | Implementation and instructions | Weights |
+|:--|:--|:--|
+| NAVSIM v1 | [R383 guide](docs/NAVSIM_V1_R383.md) · root `navsim/` | [Hugging Face](https://huggingface.co/shengkaizhang/ActWorld-JEPA) |
+| NAVSIM v2 NAVTEST / NAVHARD | [NAVSIM v2 guide](navsim_v2/README.md) | [Hugging Face](https://huggingface.co/shengkaizhang/ActWorld-JEPA) |
+| nuScenes | [nuScenes guide](nuscenes/README.md) | [Hugging Face](https://huggingface.co/shengkaizhang/ActWorld-JEPA) |
 
-Create the same base environment as Drive-JEPA/NAVSIM v1:
+The learned selectors and frozen deployment policies are part of the model:
+the neural checkpoint alone does not reproduce every reported result.
+Datasets, metric caches, raw per-scene benchmark records, optimizer states,
+credentials, and server-specific paths are not distributed.
 
-```bash
-conda create -n actworld-jepa python=3.9 -y
-conda activate actworld-jepa
-conda install -c "nvidia/label/cuda-12.1.0" cuda-toolkit -y
-pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 \
-  --index-url https://download.pytorch.org/whl/cu121
-pip install -r requirements.txt
-cd navsim
-pip install -e .
-```
+Use separate environments for NAVSIM and the OpenMMLab-based nuScenes code.
+Download benchmark data from its original providers and follow their terms.
 
-Download NAVSIM v1 following the
-[official NAVSIM instructions](https://github.com/autonomousvision/navsim/blob/main/docs/install.md)
-and the released Drive-JEPA cache/checkpoint bundle from
-[LinhanWang/Drive-JEPA](https://huggingface.co/datasets/LinhanWang/Drive-JEPA).
-Set:
+## Qualitative results
 
-```bash
-export NUPLAN_MAP_VERSION=nuplan-maps-v1.0
-export NUPLAN_MAPS_ROOT=/path/to/maps
-export OPENSCENE_DATA_ROOT=/path/to/navsim/data
-export NAVSIM_EXP_ROOT=/path/to/navsim/experiments
-export VJEPA2_CHECKPOINT="$NAVSIM_EXP_ROOT/Drive-JEPA-cache/vitl_merge_3dataset_e50.pt"
-```
+### NAVSIM: scene understanding and planning
+![NAVSIM front-view and BEV planning](docs/assets/navsim-main.png)
 
-## Reproducing R383 inference
+<details><summary>More NAVSIM examples</summary>
 
-Download `actworld_jepa_navsim_v1_r383_bundle.tar.gz` from the
-[NAVSIM v1 R383 release](https://github.com/adept-thu/ActWorld-JEPA/releases/tag/navsim-v1-r383.1)
-and extract its five files into a local artifact directory. Verify the archive
-and extracted files against [ARTIFACTS.md](ARTIFACTS.md). The released
-checkpoint is an inference-only export: all 656 model tensors are byte-for-byte
-equal after loading to those in the evaluated training checkpoint, while
-optimizer, callback, and local-path metadata have been removed. The released
-selector is self-contained and does not require the original R333/R370 files.
+![Additional NAVSIM examples](docs/assets/navsim-more.png)
+</details>
 
-Then export the paths consumed by the final launcher and run it:
+### nuScenes: six-second trajectories
+![nuScenes planning examples](docs/assets/nuscenes.png)
 
-```bash
-export ACTWORLD_CHECKPOINT=/path/to/actworld_jepa_navsim_v1_r383.ckpt
-export ACTWORLD_LATENT_VERIFIER=/path/to/ridge_strict_verifier.pkl
-export ACTWORLD_CANDIDATE_SCORER=/path/to/multidomain_safe_oracle_set_head.pt
-export ACTWORLD_TREE_META_SCORER=/path/to/aggressive_setwise_cascade_scorer.pkl
-export ACTWORLD_R383_SELECTOR=/path/to/actworld_jepa_navsim_v1_r383_selector.pkl
-export ACTWORLD_OUTPUT_DIR=/path/to/output
+## Acknowledgements and licensing
 
-bash scripts/evaluation/eval_actworld_jepa_r383.sh
-```
+We build on [Drive-JEPA](https://github.com/linhanwang/Drive-JEPA),
+[NAVSIM](https://github.com/autonomousvision/navsim),
+[MomAD](https://github.com/adept-thu/MomAD),
+[SparseDrive](https://github.com/swc-17/SparseDrive), and V-JEPA 2.
+Project presentation is inspired by MomAD and KineWorld.
+ActWorld additions use Apache-2.0; retained third-party components keep their
+original licenses. See [third-party notices](THIRD_PARTY_NOTICES.md).
 
-The launcher fails before evaluation when a required file or environment
-variable is missing. It uses the official NAVSIM v1 submission schema and
-also fails closed on missing, duplicate, or unexpected scene tokens.
-
-The `.ckpt`, `.pt`, and `.pkl` files use Python/PyTorch serialization. Verify
-their SHA256 values before use and load them only from this official release.
-
-## Training protocol
-
-All trainable neural modules and frozen selector estimators in this release
-were fitted using NAVTRAIN data. The final global selector weights and
-threshold were selected after repeated evaluations using aggregate NAVTEST
-metrics. The reported result is therefore test-feedback-tuned rather than an
-untouched-test measurement.
-
-## Acknowledgements
-
-This release builds on
-[Drive-JEPA](https://github.com/LinhanWang/Drive-JEPA),
-[NAVSIM](https://github.com/autonomousvision/navsim), and
-[V-JEPA 2](https://github.com/facebookresearch/vjepa2). Their original
-licenses are retained. The repository root is Apache-2.0; vendored V-JEPA 2
-code retains its MIT license under `navsim/vjepa2/LICENSE`.
-
-## License
-
-Apache License 2.0. See [LICENSE](LICENSE).
+The paper is a manuscript; this page does not claim conference acceptance.
+See [CITATION.cff](CITATION.cff) for citation metadata.

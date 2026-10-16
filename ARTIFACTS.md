@@ -31,3 +31,13 @@ loaded. Verify the hashes above and load files only from the official release.
 The Drive-JEPA V-JEPA 2 initialization checkpoint
 `vitl_merge_3dataset_e50.pt` comes from the upstream Drive-JEPA release and is
 not an ActWorld-JEPA artifact.
+# Multi-benchmark release
+
+Main-model weights and frozen selectors are hosted at
+[shengkaizhang/ActWorld-JEPA](https://huggingface.co/shengkaizhang/ActWorld-JEPA).
+The current file names, sizes and SHA256 hashes are in
+[artifact_manifest.json](artifact_manifest.json). The R383 archive below is
+unchanged; its earlier GitHub release remains available as a fallback.
+
+---
+

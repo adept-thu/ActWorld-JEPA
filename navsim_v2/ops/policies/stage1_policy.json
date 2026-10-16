@@ -1,0 +1,33 @@
+{
+  "source": "Aggregate NAVTRAIN evidence for frozen deployment policy",
+  "variants": {
+    "arc250": {
+      "pair_utility": 0.902084469795227,
+      "pair_utility_gain": 0.00585902901366353,
+      "ec_pass_rate": 0.8225214198286414,
+      "safety_progress_valid_rate": 0.9914320685434517,
+      "minimum_progress_ratio": 0.0,
+      "fold_pair_utility_gains": [
+        0.003164042718708515,
+        0.00899217464029789,
+        0.004759250208735466,
+        0.006601632572710514,
+        0.005943725351244211
+      ]
+    },
+    "selected": {
+      "pair_utility": 0.8962254524230957,
+      "pair_utility_gain": 0.0,
+      "ec_pass_rate": 0.7649938800489596,
+      "safety_progress_valid_rate": 1.0,
+      "minimum_progress_ratio": 1.0,
+      "fold_pair_utility_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  }
+}

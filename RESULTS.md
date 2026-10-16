@@ -30,3 +30,12 @@ R383 uses the released ActWorld-JEPA checkpoint and a frozen inference stack:
    a minimum predicted gain of `0.0075` before leaving the parent decision.
 
 All learned parameters were fitted on NAVTRAIN.
+# Current multi-benchmark results
+
+See [evaluation protocols](docs/EVALUATION_PROTOCOLS.md) for NAVSIM v1/v2 and
+nuScenes main results, corrected scoring, and paired comparisons. The earlier
+R383 local evaluation record below is preserved for provenance; it is not
+silently relabelled as the author-reported 90.07 leaderboard result.
+
+---
+

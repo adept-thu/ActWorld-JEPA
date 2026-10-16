@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 TEXT_SUFFIXES = {
     ".cff", ".cfg", ".ini", ".json", ".md", ".py", ".sh", ".toml",
-    ".txt", ".yaml", ".yml",
+    ".txt", ".yaml", ".yml", ".html", ".css", ".js",
 }
 ALLOWED_BINARY = {Path("navsim/data/8192.npy")}
 FORBIDDEN_SUFFIXES = {".ckpt", ".pkl", ".pickle", ".pt", ".pth"}
@@ -19,6 +19,10 @@ PATTERNS = {
     "server address": re.compile("39" + r"\.105\.30\.146"),
     "private unix path": re.compile(r"/(?:home|media/disks|data/share)/[^\s`\"']+"),
     "private key": re.compile("BEGIN " + r"(?:RSA |OPENSSH )?PRIVATE KEY"),
+    "HF credential": re.compile("hf_" + r"[A-Za-z0-9]{20,}"),
+    "GitHub credential": re.compile("gh[pousr]_" + r"[A-Za-z0-9]{30,}"),
+    "private Windows path": re.compile(r"[A-Z]:[/\\]Users[/\\]", re.I),
+    "private experiment root": re.compile(r"/data/" + "songziying/"),
 }
 
 
