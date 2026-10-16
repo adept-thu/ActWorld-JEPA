@@ -38,8 +38,8 @@ submission*.zip
 # Keep the small released proposal-anchor table.
 !navsim/data/
 !navsim/data/8192.npy
-!navsim_v2/navsim/data/
-!navsim_v2/navsim/data/8192.npy
+!navsim_v2/data/
+!navsim_v2/data/8192.npy
 !nuscenes/data/
 !nuscenes/data/kmeans/
 !nuscenes/data/kmeans/*.npy
