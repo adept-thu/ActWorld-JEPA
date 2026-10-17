@@ -20,6 +20,8 @@ not relicensed by this repository. Obtain them from their original providers
 under their applicable terms. This release does not distribute raw datasets.
 
 Paper figures and qualitative visualizations are supplied by the authors.
+`docs/assets/motivation.png` reproduces the conceptual panels (a–c) of
+manuscript Figure 1; the separate performance panel is not included.
 Project-page presentation was inspired by MomAD and KineWorld; its HTML/CSS was
 written for this project, rather than copying their site source or media.
 

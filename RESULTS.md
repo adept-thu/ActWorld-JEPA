@@ -1,41 +1,28 @@
-# NAVSIM v1 results
+# ActWorld-JEPA results
 
-## Frozen release
+## NAVSIM
 
-- Release identifier: `R383`
-- Protocol: official NAVSIM v1 submission/evaluation schema
-- Number of predicted trajectories: `12,146`
-- Submission SHA256:
-  `ff482967953a5de886b03638c953c24fb7740d3f62ebc15867b515f6fd69998d`
+| Benchmark | Metric | Result |
+|---|---|---:|
+| NAVSIM v1 NAVTEST | Leaderboard PDMS ↑ | **90.07** |
+| NAVSIM v2 NAVTEST | EPDMS ↑ | **91.6** |
+| NAVSIM v2 NAVHARD | Combined EPDMS ↑ | **42.7** |
 
-| Metric | Score |
-|---|---:|
-| No at-fault collisions (NC) | 0.990120 |
-| Drivable area compliance (DAC) | 0.984192 |
-| Driving direction compliance (DDC) | 0.944014 |
-| Ego progress (EP) | 0.922415 |
-| Time to collision (TTC) | 0.960563 |
-| Comfort | 0.999177 |
-| **PDMS** | **0.940721** |
+NAVSIM v2 uses human-filter-aware aggregation. NAVHARD combines two stages;
+its stage scores are 79.9571 and 53.5421. See
+[evaluation protocols](docs/EVALUATION_PROTOCOLS.md) for scoring details.
 
-## Model contract
+## nuScenes validation
 
-R383 uses the released ActWorld-JEPA checkpoint and a frozen inference stack:
+| Metric ↓ | 1 s | 2 s | 3 s | 4 s | 5 s | 6 s | Mean (1–6 s) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| L2 (m) | 0.2780 | 0.5380 | 0.8851 | 1.3135 | 1.8181 | **2.3945** | **1.2045** |
+| Box collision (%) | 0.012 | 0.136 | 0.344 | 0.723 | 1.334 | 2.034 | **0.7638** |
 
-1. Drive-JEPA produces the candidate set and base proposal scores.
-2. Planning-JEPA performs candidate-conditioned future rollout and
-   current/future latent interaction.
-3. Frozen NAVTRAIN readers estimate future-consistent utility and safety.
-4. R383 applies a fixed affine selector contrast `(1.20, -0.20)` and requires
-   a minimum predicted gain of `0.0075` before leaving the parent decision.
+## Reproduce
 
-All learned parameters were fitted on NAVTRAIN.
-# Current multi-benchmark results
-
-See [evaluation protocols](docs/EVALUATION_PROTOCOLS.md) for NAVSIM v1/v2 and
-nuScenes main results, corrected scoring, and paired comparisons. The earlier
-R383 local evaluation record below is preserved for provenance; it is not
-silently relabelled as the author-reported 90.07 leaderboard result.
-
----
-
+The [results and checkpoints table](README.md#results-and-checkpoints) links
+each benchmark to its weights, configuration and evaluation guide.
+[Evaluation protocols](docs/EVALUATION_PROTOCOLS.md) record metric definitions
+and result provenance; [release verification](docs/RELEASE_VERIFICATION.md)
+records the checks performed on the released artifacts.

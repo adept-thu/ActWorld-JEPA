@@ -16,6 +16,19 @@ to improve trajectory planning. **PC-JEPA** connects candidate plans to latent
 future outcomes; **R³** performs relational residual reranking. The release
 contains the frozen main deployments for NAVSIM v1, NAVSIM v2, and nuScenes.
 
+## Motivation
+
+How can predicted futures help a planner choose an action? ActWorld-JEPA
+conditions latent future prediction on candidate trajectories and uses the
+relation between each plan and its predicted future to refine plan selection.
+
+![From predictive representations to action-conditioned planning](docs/assets/motivation.png)
+
+*Conceptual comparison from Figure 1(a–c) of our paper: JEPA, Drive-JEPA,
+and ActWorld-JEPA.*
+
+## Framework
+
 ![ActWorld-JEPA framework](docs/assets/framework.png)
 
 ## Contents

@@ -50,14 +50,10 @@ export VJEPA2_CHECKPOINT="$NAVSIM_EXP_ROOT/Drive-JEPA-cache/vitl_merge_3dataset_
 
 ## Reproducing R383 inference
 
-Download `actworld_jepa_navsim_v1_r383_bundle.tar.gz` from the
-[NAVSIM v1 R383 release](https://github.com/adept-thu/ActWorld-JEPA/releases/tag/navsim-v1-r383.1)
-and extract its five files into a local artifact directory. Verify the archive
-and extracted files against [ARTIFACTS.md](../ARTIFACTS.md). The released
-checkpoint is an inference-only export: all 656 model tensors are byte-for-byte
-equal after loading to those in the evaluated training checkpoint, while
-optimizer, callback, and local-path metadata have been removed. The released
-selector is self-contained and does not require the original R333/R370 files.
+Download the [NAVSIM v1 bundle](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_jepa_navsim_v1_r383_bundle.tar.gz)
+and extract its five files into a local artifact directory. Follow the
+[download and verification commands](GETTING_STARTED.md#download-the-weights).
+Use the extracted model and selectors together.
 
 The installation commands above leave you in `ActWorld-JEPA/navsim`.
 Run the commands below from that directory. The launcher **generates predictions**;

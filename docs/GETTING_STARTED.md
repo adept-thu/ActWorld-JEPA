@@ -98,7 +98,7 @@ terminal where you run evaluation. Do not point NAVHARD to a NAVTEST cache.
 - **nuScenes:** report all six 1–6 s columns; collision numbers are percentages.
   The mean here is the arithmetic mean of those six columns, not the 1/2/3 s mean.
 - Small inference differences are possible across numerical libraries, devices
-  and worker settings. The selected nuScenes repeat's last decimal is not guaranteed.
+  and worker settings. Use the documented evaluation configuration.
 
 ## Troubleshooting
 
