@@ -99,11 +99,9 @@ Start with [the beginner checklist and troubleshooting](docs/GETTING_STARTED.md)
 
 ### NAVSIM video demo
 
-[![Watch the R383 NAVSIM video](docs/assets/navsim-video-poster.jpg)](https://adept-thu.github.io/ActWorld-JEPA/#video)
+https://github.com/user-attachments/assets/d01f5e66-94f4-4d34-9f27-8b106f57d24e
 
-**[Watch video](https://adept-thu.github.io/ActWorld-JEPA/#video)** ·
-[Download MP4](https://adept-thu.github.io/ActWorld-JEPA/assets/navsim-r383-demo.mp4) ·
-[Rendering instructions and provenance](docs/VISUALIZATION.md)
+[Rendering instructions](docs/VISUALIZATION.md)
 
 Three continuous turning clips, **31.5 seconds**, with recorded front camera
 and saved R383 plans in BEV. This is an **offline replay**, not a closed-loop
