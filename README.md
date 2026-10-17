@@ -37,7 +37,9 @@ deployment steps. The learned selectors are required, not optional extras.
 | NAVSIM v2 NAVTEST | ActWorld-JEPA | EPDMS ↑ | **91.6** | [Model](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_navsim_v2.ckpt) + [3 selectors](docs/GETTING_STARTED.md#download-the-weights) | [v2 guide](navsim_v2/README.md#navtest) |
 | NAVSIM v2 NAVHARD | ActWorld-JEPA | Combined EPDMS ↑ | **42.7** | [Same model](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_navsim_v2.ckpt) + [all 5 selectors](docs/GETTING_STARTED.md#download-the-weights) | [NAVHARD guide](navsim_v2/README.md#navhard) |
 
-### nuScenes planning [Checkpoint](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_nuscenes_r13.pth) · [Configuration](nuscenes/projects/configs/actworld_nuscenes.py) · [Evaluation guide](nuscenes/README.md)
+### nuScenes planning
+
+[Checkpoint](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_nuscenes_r13.pth) · [Configuration](nuscenes/projects/configs/actworld_nuscenes.py) · [Evaluation guide](nuscenes/README.md)
 
 | Metric ↓ | 1 s | 2 s | 3 s | 4 s | 5 s | 6 s | Mean (1–6 s) |
 |:--|--:|--:|--:|--:|--:|--:|--:|
