@@ -22,3 +22,11 @@ under their applicable terms. This release does not distribute raw datasets.
 Paper figures and qualitative visualizations are supplied by the authors.
 Project-page presentation was inspired by MomAD and KineWorld; its HTML/CSS was
 written for this project, rather than copying their site source or media.
+
+## NAVSIM video and poster
+
+`docs/assets/navsim-r383-demo.mp4` and `navsim-video-poster.jpg` are derived
+research visualizations of nuPlan/Motional data via OpenScene, with ActWorld-JEPA
+prediction overlays. These media retain CC BY-NC-SA 4.0 and the nuPlan Dataset
+License Agreement for Non-Commercial Use; they are not Apache-2.0 assets.
+See [media attribution, modifications and provenance](docs/VISUALIZATION.md).

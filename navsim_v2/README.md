@@ -24,8 +24,10 @@ hydra-core 1.2.0, scikit-learn 1.2.2 and timm 1.0.27. In particular, preserve
 the scikit-learn version when loading learned selector artifacts.
 
 ```bash
-conda create -n actworld-navsim python=3.9 -y
-conda activate actworld-navsim
+# Start in the cloned ActWorld-JEPA repository root.
+cd navsim_v2
+conda create -n actworld-navsim-v2 python=3.9 -y
+conda activate actworld-navsim-v2
 pip install torch==2.1.0 torchvision==0.16.0 --index-url https://download.pytorch.org/whl/cu121
 pip install -r ../requirements.txt
 pip install -e .

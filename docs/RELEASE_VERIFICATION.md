@@ -1,5 +1,22 @@
 # Release verification
 
+## 2026-10-17 documentation and distribution audit
+
+- All eight Hugging Face artifacts are publicly listed. Their LFS SHA256 and
+  byte sizes match `artifact_manifest.json`, including both large NAVSIM files.
+- Recomputed all five extracted R383 file hashes. Corrected two transcription
+  errors in `ARTIFACTS.md` and `artifacts/manifest.json` (checkpoint and selector).
+  Artifact bytes were not changed; the earlier verifier would incorrectly fail
+  for these two valid files.
+- Added benchmark-specific verification, explicit working directories, separate
+  NAVSIM environments, v1 submission metadata and beginner download instructions.
+- Aligned the v1 package's license classifier with its existing Apache-2.0
+  license. This does not change dataset or pretrained-weight license terms.
+- No model parameters, prediction selection or evaluation formulas were changed
+  by this documentation update.
+
+## Initial main-model publication
+
 Checks performed for the 2026-10-16 main-model publication:
 
 - **nuScenes model/package compatibility:** the packaged `ActWorldMomADv2SixSecond`

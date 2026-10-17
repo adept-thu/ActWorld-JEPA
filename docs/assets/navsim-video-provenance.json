@@ -1,0 +1,407 @@
+{
+  "model": "ActWorld-JEPA / R383",
+  "source_submission_sha256": "ff482967953a5de886b03638c953c24fb7740d3f62ebc15867b515f6fd69998d",
+  "fps": 2,
+  "duration_seconds": 31.5,
+  "frames": 63,
+  "clips": [
+    {
+      "log": "2021.06.28.20.24.43_veh-38_03385_04952.pkl",
+      "start": 1344,
+      "end": 1364
+    },
+    {
+      "log": "2021.10.06.08.16.17_veh-52_01949_02501.pkl",
+      "start": 318,
+      "end": 338
+    },
+    {
+      "log": "2021.10.06.07.26.10_veh-52_00006_00398.pkl",
+      "start": 711,
+      "end": 731
+    }
+  ],
+  "prediction_interpolation": false,
+  "closed_loop": false,
+  "camera_privacy_masking": "annotation-projected vehicle lower regions and pedestrian/bicycle upper regions",
+  "records": [
+    {
+      "clip": 1,
+      "frame_index": 1344,
+      "timestamp": 1624916052099281,
+      "prediction_sha256": "4b0af216da39cf52328512c2ea023a294710e83ed9a0af8a9b6c8852d3e15d40"
+    },
+    {
+      "clip": 1,
+      "frame_index": 1345,
+      "timestamp": 1624916052599376,
+      "prediction_sha256": "d7ad67ca88d0d9959d9f92efbbfed413c43059214972723d5c8ced006a8be0d7"
+    },
+    {
+      "clip": 1,
+      "frame_index": 1346,
+      "timestamp": 1624916053099677,
+      "prediction_sha256": "bd8cc49ca1c66417afca7ee96d3859dcc42912c72e6a728f4891d71d10c1692a"
+    },
+    {
+      "clip": 1,
+      "frame_index": 1347,
+      "timestamp": 1624916053599973,
+      "prediction_sha256": "3d1842f1b60d5f58def065752dc58a194b94ad5ce21136fa100988f233840ed7"
+    },
+    {
+      "clip": 1,
+      "frame_index": 1348,
+      "timestamp": 1624916054100264,
+      "prediction_sha256": "72bf1daf13134307cea266919a2c9e4f036ca3572f1c1ed84d14909c8ec10233"
+    },
+    {
+      "clip": 1,
+      "frame_index": 1349,
+      "timestamp": 1624916054600231,
+      "prediction_sha256": "b682c871322f05aa5120e004869f8aa3fb74b47c9cf16f4b05da808ca39f94d7"
+    },
+    {
+      "clip": 1,
+      "frame_index": 1350,
+      "timestamp": 1624916055099911,
+      "prediction_sha256": "785a2f6c3514a37572ccbf33babab39406463533a00ab06a50e567cced7fd03b"
+    },
+    {
+      "clip": 1,
+      "frame_index": 1351,
+      "timestamp": 1624916055599533,
+      "prediction_sha256": "c944efa2d725021226691a82a71b988a5587dc3ff8da602e7f4d647174a8c60b"
+    },
+    {
+      "clip": 1,
+      "frame_index": 1352,
+      "timestamp": 1624916056099167,
+      "prediction_sha256": "087ef673b17eb66b3dc04ab510fd37fc42fceb7c4baf74ecac5d0a0548d63d36"
+    },
+    {
+      "clip": 1,
+      "frame_index": 1353,
+      "timestamp": 1624916056599224,
+      "prediction_sha256": "ccdb6aae9d96e4dae558093bad58c93209ed1c1ea73bfb69b9937593c259f814"
+    },
+    {
+      "clip": 1,
+      "frame_index": 1354,
+      "timestamp": 1624916057099615,
+      "prediction_sha256": "dbb16399371dfc74b4bd3d36df0de0682a09f3ad9d91d9f6919dce5d47bea6d5"
+    },
+    {
+      "clip": 1,
+      "frame_index": 1355,
+      "timestamp": 1624916057599847,
+      "prediction_sha256": "9ecb8bbdc50bbae0cbc79658e3972d4e6c066695da9d3366d12273467986fc48"
+    },
+    {
+      "clip": 1,
+      "frame_index": 1356,
+      "timestamp": 1624916058100025,
+      "prediction_sha256": "40955bcdc7a6ab204d99bb3d99ab3c1d96ad06b2a924efe5914fd63db5d282bb"
+    },
+    {
+      "clip": 1,
+      "frame_index": 1357,
+      "timestamp": 1624916058599880,
+      "prediction_sha256": "6c4bcd336e1a725e6c585baf75fbb5edbdcdaddeb32c27f0df5c68aac0273c40"
+    },
+    {
+      "clip": 1,
+      "frame_index": 1358,
+      "timestamp": 1624916059099658,
+      "prediction_sha256": "d5835899b3a87aba9855d48dfb54ee3c244744b669a1c849fe3f575ba0af9686"
+    },
+    {
+      "clip": 1,
+      "frame_index": 1359,
+      "timestamp": 1624916059599444,
+      "prediction_sha256": "8a470884a2b569302b18250f09141f52460089a7e6cf44240db90f6ca156f60e"
+    },
+    {
+      "clip": 1,
+      "frame_index": 1360,
+      "timestamp": 1624916060099239,
+      "prediction_sha256": "55b959295470a3d10294adb2edce3ad4eb726850d2ab88cd49c48a020ecc29ce"
+    },
+    {
+      "clip": 1,
+      "frame_index": 1361,
+      "timestamp": 1624916060599375,
+      "prediction_sha256": "b17922e2d27c6c5ebf853054d05b4111d1c59f27f9b15126f904d245e0b36010"
+    },
+    {
+      "clip": 1,
+      "frame_index": 1362,
+      "timestamp": 1624916061099693,
+      "prediction_sha256": "a7483a2cd8a291c3b1a3cbb3251295f2a760b5fcdadad526e3217c83cc8dfdde"
+    },
+    {
+      "clip": 1,
+      "frame_index": 1363,
+      "timestamp": 1624916061599836,
+      "prediction_sha256": "0f573352b6adcc2783b8e6a5ae9ebf877c2f471ed24e5e5fa3f3a3a645d3c9b3"
+    },
+    {
+      "clip": 1,
+      "frame_index": 1364,
+      "timestamp": 1624916062099938,
+      "prediction_sha256": "73bfa1c8bf8bb3d15eb8b7f79c95caa48c82224167664d2497cdda5bb9005b69"
+    },
+    {
+      "clip": 2,
+      "frame_index": 318,
+      "timestamp": 1633510338699755,
+      "prediction_sha256": "fa2da0e3cf8a3913707f41c8c82f862a7e96d32ed958cf042a13c10ff6b639ce"
+    },
+    {
+      "clip": 2,
+      "frame_index": 319,
+      "timestamp": 1633510339199700,
+      "prediction_sha256": "33d3786769725e9e202154e4d0c2d44b3917c1dcd2ce39fe343ac1ac025eb43c"
+    },
+    {
+      "clip": 2,
+      "frame_index": 320,
+      "timestamp": 1633510339699731,
+      "prediction_sha256": "5c8d20ec62f3e829ade281dd79bb8e8d0a2bed593dacedf81b5a75bf66e29a4c"
+    },
+    {
+      "clip": 2,
+      "frame_index": 321,
+      "timestamp": 1633510340199806,
+      "prediction_sha256": "192051ae4e745e481b8ad836f04af123d83242aa44e6a55a378b1ecc1a5d5e25"
+    },
+    {
+      "clip": 2,
+      "frame_index": 322,
+      "timestamp": 1633510340699995,
+      "prediction_sha256": "89353adca178aba70b1a962e4191fd74b6f70c9fadf8a0d6d4821fe68202cc2b"
+    },
+    {
+      "clip": 2,
+      "frame_index": 323,
+      "timestamp": 1633510341200133,
+      "prediction_sha256": "d1e7d78fd22c75e6ca69fea3d6ca26aaef107791a28b91f26937da1dddfd6a70"
+    },
+    {
+      "clip": 2,
+      "frame_index": 324,
+      "timestamp": 1633510341699980,
+      "prediction_sha256": "a617e65534bf8edf013aa9f6aded5497855d63d3f625973a3cc2460ec3536dd4"
+    },
+    {
+      "clip": 2,
+      "frame_index": 325,
+      "timestamp": 1633510342199810,
+      "prediction_sha256": "2dd583b4746f64ebfaa77b9f58f72e30fec72b75f4153d987de515887851c37f"
+    },
+    {
+      "clip": 2,
+      "frame_index": 326,
+      "timestamp": 1633510342699711,
+      "prediction_sha256": "075d81537a604fdc3ed6c8830198936f05dd70e3d36c22a83d8251561dd5215c"
+    },
+    {
+      "clip": 2,
+      "frame_index": 327,
+      "timestamp": 1633510343199626,
+      "prediction_sha256": "7f69b95278ebfd02c3f366c37754b439f6d6aa3a1418de95a0ce23c8f63efa24"
+    },
+    {
+      "clip": 2,
+      "frame_index": 328,
+      "timestamp": 1633510343699772,
+      "prediction_sha256": "21599e857ef7b1f3f9db2065be71c075d6f61b6c2c72a65fb280131990bf3973"
+    },
+    {
+      "clip": 2,
+      "frame_index": 329,
+      "timestamp": 1633510344199992,
+      "prediction_sha256": "6579dbd2b16f5a205b4ce52b40f256844358f46322d5bbf25bc231ac525c78c9"
+    },
+    {
+      "clip": 2,
+      "frame_index": 330,
+      "timestamp": 1633510344700164,
+      "prediction_sha256": "ad438019ffa694158677cade5a123e56bad8308aeb9f9f5fa95d8fb74a66d185"
+    },
+    {
+      "clip": 2,
+      "frame_index": 331,
+      "timestamp": 1633510345200328,
+      "prediction_sha256": "c00d13375fa402aba7edec95ea97c6ce37c25ae834996117c34de769a6010718"
+    },
+    {
+      "clip": 2,
+      "frame_index": 332,
+      "timestamp": 1633510345700166,
+      "prediction_sha256": "1cf5166c9f3b82ea198087d6aafdfff2c29e7515bebf9dcb6131909fb58bf263"
+    },
+    {
+      "clip": 2,
+      "frame_index": 333,
+      "timestamp": 1633510346199897,
+      "prediction_sha256": "fa149905916f81cdf376dbe45816975bf45621abd6f5c951425b2a7012025f61"
+    },
+    {
+      "clip": 2,
+      "frame_index": 334,
+      "timestamp": 1633510346699674,
+      "prediction_sha256": "7bdfd9bdf6ef310df09f633e6082680cd514692a19e90d1fec480281f803b60b"
+    },
+    {
+      "clip": 2,
+      "frame_index": 335,
+      "timestamp": 1633510347199444,
+      "prediction_sha256": "de489bae5448a068fc9283f6c585c79f7ea9066dc488caeda66c52d8320f194d"
+    },
+    {
+      "clip": 2,
+      "frame_index": 336,
+      "timestamp": 1633510347699654,
+      "prediction_sha256": "8555c4b3ddda0c3eb0c13cd7205166390a542db8eb5bf36f7644136dc1da15b1"
+    },
+    {
+      "clip": 2,
+      "frame_index": 337,
+      "timestamp": 1633510348200030,
+      "prediction_sha256": "967cd623765e5dfc1fcc9f21c3a43ebda689d92b683afaf9b9f229a620972b29"
+    },
+    {
+      "clip": 2,
+      "frame_index": 338,
+      "timestamp": 1633510348700196,
+      "prediction_sha256": "d24e3412e89164c4c18daea1db36786e976b47d2805c0b248dbdd26a0685721a"
+    },
+    {
+      "clip": 3,
+      "frame_index": 711,
+      "timestamp": 1633505585200503,
+      "prediction_sha256": "7611ac28d1c931bb8e92644d4ed70ac5c22f099cdf6b175ddc44d05c984daf8d"
+    },
+    {
+      "clip": 3,
+      "frame_index": 712,
+      "timestamp": 1633505585700359,
+      "prediction_sha256": "8362676b56f12e9c0bcd8d3846269874828413b15ebb8f41bd94d42e80809847"
+    },
+    {
+      "clip": 3,
+      "frame_index": 713,
+      "timestamp": 1633505586200045,
+      "prediction_sha256": "c8da4c3f26a321fefa86cc689e191e85ffa0a5bd74fac3f18afebab2362f803a"
+    },
+    {
+      "clip": 3,
+      "frame_index": 714,
+      "timestamp": 1633505586699800,
+      "prediction_sha256": "b44a3cb5bdf3efaa5e721091a9e1e96cdbfcca9562418a82213bcc5a926028d3"
+    },
+    {
+      "clip": 3,
+      "frame_index": 715,
+      "timestamp": 1633505587199531,
+      "prediction_sha256": "0b1d75b2da548a7e809d83c89773bedd4b7d9d508fd0bb43551bb6d17f4cae3e"
+    },
+    {
+      "clip": 3,
+      "frame_index": 716,
+      "timestamp": 1633505587699655,
+      "prediction_sha256": "465c1ac4b7a798d8d911b7f0093254cc9b78185f34a83147a9d181c20b1e51c0"
+    },
+    {
+      "clip": 3,
+      "frame_index": 717,
+      "timestamp": 1633505588200048,
+      "prediction_sha256": "f9e409cee931b70f40c11e42aca01c394be3b76660b20eca6c954ecfab91f805"
+    },
+    {
+      "clip": 3,
+      "frame_index": 718,
+      "timestamp": 1633505588700294,
+      "prediction_sha256": "dac2c6752818e2a9bcaba992c0713da5159ed327f826bc0c7b2cbf550fababf2"
+    },
+    {
+      "clip": 3,
+      "frame_index": 719,
+      "timestamp": 1633505589200464,
+      "prediction_sha256": "221e2391bda1076c786eba75a7dd65102318579b132196366fe495080ad64a9b"
+    },
+    {
+      "clip": 3,
+      "frame_index": 720,
+      "timestamp": 1633505589700296,
+      "prediction_sha256": "838cb7b2f600ec140816408c2497d6c3fe3eaadef26ce5889d63d83d0ba5550e"
+    },
+    {
+      "clip": 3,
+      "frame_index": 721,
+      "timestamp": 1633505590200058,
+      "prediction_sha256": "82919878e9ad2e956f109843e89be9f926705759ef1857530e17f74d78e2a28d"
+    },
+    {
+      "clip": 3,
+      "frame_index": 722,
+      "timestamp": 1633505590699844,
+      "prediction_sha256": "3c383df7106cf4e6fd4143b8ba3f3bb4678d1716479e99be9bac01c89851db4f"
+    },
+    {
+      "clip": 3,
+      "frame_index": 723,
+      "timestamp": 1633505591199594,
+      "prediction_sha256": "d0c7222e229096ec29d8a054696601597d0ac5e768a3b1142d727b6416ee87de"
+    },
+    {
+      "clip": 3,
+      "frame_index": 724,
+      "timestamp": 1633505591699709,
+      "prediction_sha256": "a336859accc262f314d7561366fa651d80eb5127d1c37521018b84ae0b98bde5"
+    },
+    {
+      "clip": 3,
+      "frame_index": 725,
+      "timestamp": 1633505592200003,
+      "prediction_sha256": "9b6909458e322a5972c463f333d2b0ffcec66a7e897a482401f1030005d126ac"
+    },
+    {
+      "clip": 3,
+      "frame_index": 726,
+      "timestamp": 1633505592700224,
+      "prediction_sha256": "88eb961e7cab72ff81a178b96f3b0ff1907720592a5536dfdb7dbfd95d330ecb"
+    },
+    {
+      "clip": 3,
+      "frame_index": 727,
+      "timestamp": 1633505593200396,
+      "prediction_sha256": "0f1f1066b063892db027048bd665399037580b1ba19432ee0e24fa74cf125b47"
+    },
+    {
+      "clip": 3,
+      "frame_index": 728,
+      "timestamp": 1633505593700205,
+      "prediction_sha256": "25af2ee7493442503e16a2cf0b140068b1af015925630610b0f15c03944c9f26"
+    },
+    {
+      "clip": 3,
+      "frame_index": 729,
+      "timestamp": 1633505594199976,
+      "prediction_sha256": "3a2eab3dd1e7ce79ca8b846520a675877073c6b0f0cf18dad82a89c909b54b1a"
+    },
+    {
+      "clip": 3,
+      "frame_index": 730,
+      "timestamp": 1633505594699753,
+      "prediction_sha256": "83c159e34eee5f945da1dd3d69eb3a1292b9a387769d25cc73f7a94027bcc74f"
+    },
+    {
+      "clip": 3,
+      "frame_index": 731,
+      "timestamp": 1633505595199525,
+      "prediction_sha256": "16343faf146ceab7db93ebcca86e64c6e11202739237805c1d5a388b4d4b249c"
+    }
+  ]
+}
