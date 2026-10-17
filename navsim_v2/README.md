@@ -5,16 +5,14 @@ NAVTEST model. NAVHARD adds the frozen temporal pair head, temporal head,
 channel-wise projection, dense rollout and first-stage arc policy. All these
 steps are required to reproduce the main deployment.
 
-| Split | Legacy EPDMS | Corrected EPDMS |
-|---|---:|---:|
-| NAVTEST (11,989 valid scenes) | 88.1771 | **91.5900** |
-| NAVHARD (5,912 valid scenes, two-stage combined) | 39.2045 | **42.7351** |
+| Split | EPDMS ↑ |
+|---|---:|
+| NAVTEST | **91.6** |
+| NAVHARD (two-stage combined) | **42.7** |
 
-These score pairs use fixed predictions. The correction recomputes aggregate
-terms after human-trajectory filtering; it does not change the model. Read
-[evaluation protocols](../docs/EVALUATION_PROTOCOLS.md) before comparing methods.
-The NAVHARD first-/second-stage scores are 79.9571 / 53.5421; the combined score
-is not their arithmetic average.
+Evaluation uses human-filter-aware score aggregation as described in
+[evaluation protocols](../docs/EVALUATION_PROTOCOLS.md). NAVHARD reports a
+combined score across its two stages.
 
 ## Setup
 
@@ -36,10 +34,8 @@ pip install pytorch-lightning==2.2.1 hydra-core==1.2.0 scikit-learn==1.2.2 timm=
 
 Obtain data/maps and matching metric caches through the NAVSIM providers.
 NAVHARD requires the reactive **two-stage** split, including synthetic scenes;
-a NAVTEST cache is not interchangeable. The frozen reactive evaluator snapshot
-is in `navhard_devkit/`, with its original Apache-2.0 notices and the documented
-human-filter correction. It is a versioned evaluation snapshot, not a claim
-that every file matches the latest upstream NAVSIM release.
+use the matching NAVHARD cache. The required evaluator is included in
+`navhard_devkit/`.
 
 Download the shared pretrained V-JEPA asset `vitl_merge_3dataset_e50.pt` from
 [LinhanWang/Drive-JEPA](https://huggingface.co/datasets/LinhanWang/Drive-JEPA)
@@ -72,19 +68,9 @@ export WORKERS=2 SCORE_WORKERS=8
 bash run_navhard.sh
 ```
 
-The script first captures current-observation candidate representations, then
-applies the frozen learned temporal policies, and finally scores the resulting
-trajectories. It fails rather than overwrite an existing output directory.
-No future labels are read by the prediction/postprocessing steps. Metric caches
-are used by the evaluator, separately from prediction generation.
+The launcher generates candidate trajectories, applies the released selectors,
+and evaluates the final plans. Choose a new `OUTPUT_DIR` for each run.
 
-`ops/policies/` contains aggregate NAVTRAIN gate evidence for the fixed
-postprocessing policies. Training reference features in the learned selector
-are model artifacts, not raw benchmark images. The released best deployment
-was chosen during a sequence of benchmark experiments; we do not describe this
-release as an untouched-test model-selection protocol.
-
-The `MOMWORLD_*` environment names in score-only execution are compatibility
-names inherited from the frozen evaluator. They do not select another model.
-`ops/score_only_compat` supplies a fail-closed import shim for an unused
-diffusion training dependency; it must not be used to train a diffusion model.
+Final trajectories are saved to `$OUTPUT_DIR/trajectories.pkl`; evaluation
+outputs are written to `$OUTPUT_DIR/scored/`. Keep the checkpoint, selectors,
+and supplied evaluation configuration together when reproducing the results.

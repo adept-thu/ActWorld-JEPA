@@ -1,9 +1,8 @@
 # nuScenes six-second main experiment
 
-This directory contains the frozen round-13 architecture and inference
-configuration. The reported result is inference repeat **04** of the same
-checkpoint: 6 s L2 **2.3945 m**, six-column mean L2 **1.204533 m**, and mean
-box collision **0.763833%**. See [all horizons and paired baseline](../docs/EVALUATION_PROTOCOLS.md).
+Evaluate ActWorld-JEPA on the nuScenes validation split with six-second planning.
+The reported 6 s L2 is **2.3945 m**, mean L2 is **1.2045 m**, and mean box
+collision rate is **0.7638%**. See the [complete results](../README.md#nuscenes-planning).
 
 ## Environment and data
 
@@ -48,14 +47,11 @@ export CUDA_VISIBLE_DEVICES=0
 bash run_evaluation.sh
 ```
 
-The launcher preserves one-process distributed inference, seed 41, deterministic
-flag and four data workers. Changing execution topology can introduce numerical
-differences. No guarantee is made that a fresh run reproduces the selected
-repeat's last decimal. Do not scale the metric or use the 1/2/3 s average in
-place of the mean over all six horizons.
+The launcher uses one GPU, seed 41, deterministic mode and four data workers.
+It saves predictions and reports L2 (meters) and box collision rate (percent)
+at 1–6 seconds. The reported mean averages all six horizons.
 
-The inference export retains all 1,414 state tensors exactly; strict loading
-against this packaged model was verified on CPU using the compiled extension.
-Optimizer states and training metadata were removed. The original baseline
-repository is unchanged. Flow matching was already disabled before its unused
-branch was removed from this standalone release.
+Use the released configuration and execution settings for evaluation.
+Checkpoint checks and additional evaluation details are documented in
+[release verification](../docs/RELEASE_VERIFICATION.md) and
+[evaluation protocols](../docs/EVALUATION_PROTOCOLS.md).

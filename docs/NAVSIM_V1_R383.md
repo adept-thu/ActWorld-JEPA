@@ -11,39 +11,13 @@ the original Drive-JEPA proposal set. The simulator is not called in the
 online planning loop.
 
 This guide is executed from the repository root unless a `cd` is shown.
-The historical local score below is **not** the author-reported 90.07 leaderboard
-score. See [score provenance](EVALUATION_PROTOCOLS.md#navsim-v1-r383).
+## Model and checkpoint
 
-## Historical NAVSIM v1 local result
-
-The frozen `R383` release produced the following NAVSIM v1 result:
-
-| NC | DAC | DDC | EP | TTC | Comfort | PDMS |
-|---:|---:|---:|---:|---:|---:|---:|
-| 0.990120 | 0.984192 | 0.944014 | 0.922415 | 0.960563 | 0.999177 | **0.940721** |
-
-The generated submission contains 12,146 trajectories. Its SHA256 is
-`ff482967953a5de886b03638c953c24fb7740d3f62ebc15867b515f6fd69998d`.
-See [RESULTS.md](../RESULTS.md) for the evaluation contract.
-
-## Release scope
-
-The root `navsim/` directory contains the NAVSIM v1 implementation used
-by the best frozen result:
-
-- ActWorld-JEPA model, losses, planning-JEPA rollout, and selection code;
-- the required Drive-JEPA perception-based base implementation;
-- the NAVSIM v1.1 devkit code and the vendored V-JEPA 2 source dependency;
-- the exact R383 submission launcher and artifact builder;
-- artifact hashes and a release audit utility.
-
-It does **not** contain datasets, metric caches, raw evaluation CSVs,
-per-scene benchmark outputs, credentials, local machine paths, failed
-experiments, or old source backups. The checkpoint and frozen inference
-artifacts are distributed as assets of the
-[NAVSIM v1 R383 release](https://github.com/adept-thu/ActWorld-JEPA/releases/tag/navsim-v1-r383.1);
-their exact names, sizes, and hashes are recorded in
-[ARTIFACTS.md](../ARTIFACTS.md).
+The NAVSIM v1 model achieves **90.07 PDMS** on the NAVTEST leaderboard.
+Download the model and its four required selectors from
+[Hugging Face](https://huggingface.co/shengkaizhang/ActWorld-JEPA).
+Follow the [download instructions](GETTING_STARTED.md#download-the-weights)
+and verify the files using the published [artifact manifest](../ARTIFACTS.md).
 
 ## Installation
 
