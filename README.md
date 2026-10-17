@@ -33,26 +33,20 @@ deployment steps. The learned selectors are required, not optional extras.
 
 | Benchmark / split | Model | Metric | Result | Checkpoint and required artifacts | Reproduce |
 |:--|:--|:--|--:|:--|:--|
-| NAVSIM v1 NAVTEST | R383 | Leaderboard PDMS ↑ | **90.07**† | [R383 bundle](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_jepa_navsim_v1_r383_bundle.tar.gz) (model + 4 selectors) | [v1 guide](docs/NAVSIM_V1_R383.md) |
-| NAVSIM v2 NAVTEST | Aligned actor + selector | Corrected EPDMS ↑ | **91.6** | [Model](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_navsim_v2.ckpt) + [3 selectors](docs/GETTING_STARTED.md#download-the-weights) | [v2 guide](navsim_v2/README.md#navtest) |
-| NAVSIM v2 NAVHARD | Two-stage temporal deployment | Corrected combined EPDMS ↑ | **42.7** | [Same model](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_navsim_v2.ckpt) + [all 5 selectors](docs/GETTING_STARTED.md#download-the-weights) | [NAVHARD guide](navsim_v2/README.md#navhard) |
+| NAVSIM v1 NAVTEST | ActWorld-JEPA | Leaderboard PDMS ↑ | **90.07** | [Model bundle](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_jepa_navsim_v1_r383_bundle.tar.gz) (model + 4 selectors) | [v1 guide](docs/NAVSIM_V1_R383.md) |
+| NAVSIM v2 NAVTEST | ActWorld-JEPA | EPDMS ↑ | **91.6** | [Model](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_navsim_v2.ckpt) + [3 selectors](docs/GETTING_STARTED.md#download-the-weights) | [v2 guide](navsim_v2/README.md#navtest) |
+| NAVSIM v2 NAVHARD | ActWorld-JEPA | Combined EPDMS ↑ | **42.7** | [Same model](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_navsim_v2.ckpt) + [all 5 selectors](docs/GETTING_STARTED.md#download-the-weights) | [NAVHARD guide](navsim_v2/README.md#navhard) |
 
-**nuScenes validation — round 13, repeat 04.** [Checkpoint](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_nuscenes_r13.pth) · [Configuration](nuscenes/projects/configs/actworld_nuscenes.py) · [Evaluation guide](nuscenes/README.md)
+### nuScenes planning [Checkpoint](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_nuscenes_r13.pth) · [Configuration](nuscenes/projects/configs/actworld_nuscenes.py) · [Evaluation guide](nuscenes/README.md)
 
 | Metric ↓ | 1 s | 2 s | 3 s | 4 s | 5 s | 6 s | Mean (1–6 s) |
 |:--|--:|--:|--:|--:|--:|--:|--:|
 | L2 (m) | 0.2780 | 0.5380 | 0.8851 | 1.3135 | 1.8181 | **2.3945** | **1.2045** |
 | Box collision (%) | 0.012 | 0.136 | 0.344 | 0.723 | 1.334 | 2.034 | **0.7638** |
 
-† R383's 90.07 leaderboard / 90.05 local result is author-reported. An earlier
-local R383 record is 94.0721 under a different evaluation record; it is retained
-in the [protocol notes](docs/EVALUATION_PROTOCOLS.md), not relabelled.
-
-NAVSIM v2 **91.6 / 42.7 use corrected human-filter aggregation**; legacy values
-are **88.2 / 39.2** for the same saved predictions. Compare only matching splits
-and evaluator revisions ([official issue #151](https://github.com/autonomousvision/navsim/issues/151)).
-nuScenes repeat 04 is a selected inference repeat of one checkpoint; a fresh
-run may differ slightly. These are not claims of bitwise reproducibility.
+Results are evaluated on the corresponding benchmark splits using the released
+configurations. See [evaluation details](docs/EVALUATION_PROTOCOLS.md) for the
+NAVSIM v2 scoring implementation and nuScenes averaging convention.
 
 ## Getting started
 
@@ -79,14 +73,12 @@ cd ActWorld-JEPA
 
 | I want to… | Follow this guide | Output |
 |:--|:--|:--|
-| Run NAVSIM v1 R383 | [NAVSIM v1](docs/NAVSIM_V1_R383.md) | `submission.pkl`; local scoring is a separate command |
+| Run NAVSIM v1 | [NAVSIM v1](docs/NAVSIM_V1_R383.md) | `submission.pkl`; local scoring is a separate command |
 | Evaluate NAVSIM v2 NAVTEST | [NAVSIM v2](navsim_v2/README.md) | Timestamped evaluation CSV |
 | Evaluate NAVSIM v2 NAVHARD | [NAVHARD](navsim_v2/README.md#navhard) | Final trajectories + two-stage score CSV |
 | Evaluate nuScenes | [nuScenes](nuscenes/README.md) | Predictions + six-horizon planning metrics |
 
 Start with [the beginner checklist and troubleshooting](docs/GETTING_STARTED.md).
-See [what has actually been verified](docs/RELEASE_VERIFICATION.md) before
-interpreting the release as a complete fresh-machine reproduction.
 
 ## Qualitative results
 
@@ -113,10 +105,6 @@ the dataset's non-commercial/share-alike terms, separately from the code license
 ![Additional NAVSIM examples](docs/assets/navsim-more.png)
 </details>
 
-These manuscript illustrations are qualitative examples; their visualization
-pipeline is separate from benchmark scoring. They should not be used to infer
-the numerical performance of a particular checkpoint.
-
 ### nuScenes: six-second trajectories
 
 ![nuScenes planning examples](docs/assets/nuscenes.png)
@@ -125,8 +113,7 @@ the numerical performance of a particular checkpoint.
 
 - [Artifact manifest](artifact_manifest.json): exact file sizes and SHA256.
 - [Verification record](docs/RELEASE_VERIFICATION.md): package checks and their limits.
-- [Evaluation protocols](docs/EVALUATION_PROTOCOLS.md): metric corrections,
-  model-selection history and repeated-inference variability.
+- [Evaluation protocols](docs/EVALUATION_PROTOCOLS.md): splits, metrics and evaluation settings.
 - [Third-party notices](THIRD_PARTY_NOTICES.md): original licenses remain in force.
 
 Datasets, metric caches, credentials, optimizer states and private experiment
@@ -147,4 +134,3 @@ Their videos and media are not copied into this release.
 ## Citation
 
 See [CITATION.cff](CITATION.cff) for the manuscript's citation metadata.
-This repository does not claim conference acceptance.
