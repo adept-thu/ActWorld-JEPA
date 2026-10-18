@@ -15,6 +15,7 @@ ActWorld-JEPA predicts action-conditioned future representations and uses them
 to improve trajectory planning. **PC-JEPA** connects candidate plans to latent
 future outcomes; **R³** performs relational residual reranking. The release
 contains the frozen main deployments for NAVSIM v1, NAVSIM v2, and nuScenes.
+The base planners are **iPad** for NAVSIM and **MomAD** for nuScenes.
 
 ## Motivation
 
@@ -136,7 +137,8 @@ or upstream pretrained weights. Only load trusted, hash-verified pickle files.
 
 ## Acknowledgements
 
-We build on [Drive-JEPA](https://github.com/linhanwang/Drive-JEPA),
+We thank [iPad](https://github.com/Kguo-cs/iPad),
+[Drive-JEPA](https://github.com/linhanwang/Drive-JEPA),
 [NAVSIM](https://github.com/autonomousvision/navsim),
 [MomAD](https://github.com/adept-thu/MomAD),
 [SparseDrive](https://github.com/swc-17/SparseDrive), and V-JEPA 2.

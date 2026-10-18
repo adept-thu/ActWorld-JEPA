@@ -1,5 +1,7 @@
 # NAVSIM v2 main deployments
 
+ActWorld-JEPA uses iPad as its base planner on NAVSIM v2.
+
 The shared aligned-actor checkpoint and learned selectors implement the released
 NAVTEST model. NAVHARD adds the frozen temporal pair head, temporal head,
 channel-wise projection, dense rollout and first-stage arc policy. All these
@@ -16,7 +18,7 @@ combined score across its two stages.
 
 ## Setup
 
-Use the Drive-JEPA / NAVSIM environment. The evaluated installation used Python
+Create the NAVSIM v2 evaluation environment. The evaluated installation used Python
 3.9, PyTorch 2.1.0+cu121, torchvision 0.16.0+cu121, pytorch-lightning 2.2.1,
 hydra-core 1.2.0, scikit-learn 1.2.2 and timm 1.0.27. In particular, preserve
 the scikit-learn version when loading learned selector artifacts.

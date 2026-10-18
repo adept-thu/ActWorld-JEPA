@@ -3,11 +3,11 @@
 Official NAVSIM v1 code release for **ActWorld-JEPA: Action-Conditioned
 Joint-Embedding World Modeling for Autonomous End-to-End Driving**.
 
-ActWorld-JEPA starts from the Drive-JEPA perception-based planner and extends
+ActWorld-JEPA uses iPad as its base planner on NAVSIM and extends
 JEPA from visual representation learning into planning. Each candidate
 trajectory conditions a latent future rollout, current and predicted-future
 features interact at candidate level, and a future-consistent selector ranks
-the original Drive-JEPA proposal set. The simulator is not called in the
+the candidate proposal set. The simulator is not called in the
 online planning loop.
 
 This guide is executed from the repository root unless a `cd` is shown.
@@ -21,7 +21,7 @@ and verify the files using the published [artifact manifest](../ARTIFACTS.md).
 
 ## Installation
 
-Create the same base environment as Drive-JEPA/NAVSIM v1:
+Create the NAVSIM v1 evaluation environment:
 
 ```bash
 conda create -n actworld-jepa python=3.9 -y
