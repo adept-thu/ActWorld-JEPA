@@ -11,33 +11,30 @@
 
 </div>
 
-ActWorld-JEPA predicts action-conditioned future representations and uses them
-to improve trajectory planning. **PC-JEPA** connects candidate plans to latent
-future outcomes; **R³** performs relational residual reranking. The release
-contains the frozen main deployments for NAVSIM v1, NAVSIM v2, and nuScenes.
-The base planners are **iPad** for NAVSIM and **MomAD** for nuScenes.
+**ActWorld-JEPA uses candidate plans to predict latent futures and improve trajectory planning.**
+It combines plan-conditioned JEPA (PC-JEPA) with relational residual reranking
+(R³). The base planners are iPad for NAVSIM and MomAD for nuScenes.
 
-## Motivation
+[Overview](#overview) · [Video](#video-demo) · [Results & weights](#results-and-checkpoints) · [Get started](#getting-started) · [Visualizations](#qualitative-results)
 
-How can predicted futures help a planner choose an action? ActWorld-JEPA
-conditions latent future prediction on candidate trajectories and uses the
-relation between each plan and its predicted future to refine plan selection.
+## Overview
 
-![From predictive representations to action-conditioned planning](docs/assets/motivation.png)
+**Which future matters for the action we are about to take?** Instead of
+predicting future representations independently of a plan, ActWorld-JEPA
+conditions latent prediction on candidate trajectories and uses plan–future
+compatibility to guide planning.
 
-*Conceptual comparison from Figure 1(a–c) of our paper: JEPA, Drive-JEPA,
-and ActWorld-JEPA.*
-
-## Framework
+![ActWorld-JEPA motivation](docs/assets/motivation.png)
 
 ![ActWorld-JEPA framework](docs/assets/framework.png)
 
-## Contents
+## Video demo
 
-- [Results and checkpoints](#results-and-checkpoints)
-- [Getting started](#getting-started)
-- [Qualitative results](#qualitative-results)
-- [Reproducibility and licensing](#reproducibility-and-licensing)
+https://github.com/user-attachments/assets/d01f5e66-94f4-4d34-9f27-8b106f57d24e
+
+Three NAVSIM turning clips with recorded front-camera images and saved model
+plans. **Offline replay, not closed-loop driving.**
+[Media details and rendering](docs/VISUALIZATION.md).
 
 ## Results and checkpoints
 
@@ -45,11 +42,11 @@ and ActWorld-JEPA.*
 NAVSIM v2 NAVTEST and NAVHARD share a neural checkpoint but use different
 deployment steps. The learned selectors are required, not optional extras.
 
-| Benchmark / split | Model | Metric | Result | Checkpoint and required artifacts | Reproduce |
-|:--|:--|:--|--:|:--|:--|
-| NAVSIM v1 NAVTEST | ActWorld-JEPA | Leaderboard PDMS ↑ | **90.07** | [Model bundle](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_jepa_navsim_v1_r383_bundle.tar.gz) (model + 4 selectors) | [v1 guide](docs/NAVSIM_V1_R383.md) |
-| NAVSIM v2 NAVTEST | ActWorld-JEPA | EPDMS ↑ | **91.6** | [Model](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_navsim_v2.ckpt) + [3 selectors](docs/GETTING_STARTED.md#download-the-weights) | [v2 guide](navsim_v2/README.md#navtest) |
-| NAVSIM v2 NAVHARD | ActWorld-JEPA | Combined EPDMS ↑ | **42.7** | [Same model](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_navsim_v2.ckpt) + [all 5 selectors](docs/GETTING_STARTED.md#download-the-weights) | [NAVHARD guide](navsim_v2/README.md#navhard) |
+| Benchmark / split | Metric | Result | Weights | Guide |
+|:--|:--|--:|:--|:--|
+| NAVSIM v1 NAVTEST | Leaderboard PDMS ↑ | **90.07** | [Model bundle](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_jepa_navsim_v1_r383_bundle.tar.gz) (model + 4 selectors) | [v1 guide](docs/NAVSIM_V1_R383.md) |
+| NAVSIM v2 NAVTEST | EPDMS ↑ | **91.6** | [Model](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_navsim_v2.ckpt) + [3 selectors](docs/GETTING_STARTED.md#download-the-weights) | [v2 guide](navsim_v2/README.md#navtest) |
+| NAVSIM v2 NAVHARD | Combined EPDMS ↑ | **42.7** | [Same model](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_navsim_v2.ckpt) + [all 5 selectors](docs/GETTING_STARTED.md#download-the-weights) | [NAVHARD guide](navsim_v2/README.md#navhard) |
 
 ### nuScenes planning
 
@@ -66,49 +63,33 @@ NAVSIM v2 scoring implementation and nuScenes averaging convention.
 
 ## Getting started
 
-This release is for **running the frozen main models**. You do not need to
-retrain them. Use Linux, an NVIDIA GPU and Conda for the documented evaluation
-workflows. Dataset downloads and metric-cache preparation are separate steps.
+**Run the released models without retraining.** You need Linux, Conda, an NVIDIA
+GPU, and the dataset for your chosen benchmark. Use a separate environment
+for NAVSIM v1, NAVSIM v2, and nuScenes.
 
 ```bash
 git clone https://github.com/adept-thu/ActWorld-JEPA.git
 cd ActWorld-JEPA
 ```
 
-1. **Choose your benchmark.** NAVSIM v1, NAVSIM v2 and nuScenes require separate
-   environments. Do not install both NAVSIM packages in the same environment.
-2. **Download the matching checkpoint and selectors.** Follow the
-   [download instructions](docs/GETTING_STARTED.md#download-the-weights);
-   verify SHA256 before loading files.
-3. **Prepare data and maps.** Obtain the original datasets from their providers.
-   NAVSIM also needs the matching split's metric cache and V-JEPA initialization.
-4. **Install and evaluate.** Follow one of the guides below, replacing the
-   example absolute paths with your own directories.
-5. **Read the correct result.** Match the split, evaluator and averaging rule
-   in [evaluation protocols](docs/EVALUATION_PROTOCOLS.md).
+1. **Install and prepare data:** open one guide below and follow its setup section.
+2. **Download and verify weights:** use the matching block in the
+   [download guide](docs/GETTING_STARTED.md#download-the-weights), from the repository root.
+3. **Evaluate:** return to the benchmark directory, set your data/weight paths,
+   and run the guide's evaluation command.
 
-| I want to… | Follow this guide | Output |
+| Benchmark | Setup and evaluation | What you get |
 |:--|:--|:--|
-| Run NAVSIM v1 | [NAVSIM v1](docs/NAVSIM_V1_R383.md) | `submission.pkl`; local scoring is a separate command |
-| Evaluate NAVSIM v2 NAVTEST | [NAVSIM v2](navsim_v2/README.md) | Timestamped evaluation CSV |
-| Evaluate NAVSIM v2 NAVHARD | [NAVHARD](navsim_v2/README.md#navhard) | Final trajectories + two-stage score CSV |
-| Evaluate nuScenes | [nuScenes](nuscenes/README.md) | Predictions + six-horizon planning metrics |
+| NAVSIM v1 NAVTEST | [NAVSIM v1 guide](docs/NAVSIM_V1_R383.md) | Submission predictions; separate local scoring command |
+| NAVSIM v2 NAVTEST | [NAVTEST guide](navsim_v2/README.md#setup) | Evaluation CSV |
+| NAVSIM v2 NAVHARD | [NAVHARD guide](navsim_v2/README.md#navhard) | Final trajectories and two-stage score CSV |
+| nuScenes | [nuScenes guide](nuscenes/README.md) | Predictions and 1–6 s planning metrics |
 
-Start with [the beginner checklist and troubleshooting](docs/GETTING_STARTED.md).
+NAVSIM v2 NAVHARD uses its own two-stage data and cache, not the NAVTEST cache.
+Download every selector required by your benchmark. See the
+[checklist and troubleshooting](docs/GETTING_STARTED.md) if a dependency or path is missing.
 
 ## Qualitative results
-
-### NAVSIM video demo
-
-https://github.com/user-attachments/assets/d01f5e66-94f4-4d34-9f27-8b106f57d24e
-
-[Rendering instructions](docs/VISUALIZATION.md)
-
-Three continuous turning clips, **31.5 seconds**, with recorded front camera
-and saved R383 plans in BEV. This is an **offline replay**, not a closed-loop
-driving demo. Source cadence is 2 Hz; no generated intermediate frames or
-trajectory interpolation. BEV actors are dataset annotations. Media retain
-the dataset's non-commercial/share-alike terms, separately from the code license.
 
 ### NAVSIM: scene understanding and planning
 
@@ -123,28 +104,23 @@ the dataset's non-commercial/share-alike terms, separately from the code license
 
 ![nuScenes planning examples](docs/assets/nuscenes.png)
 
-## Reproducibility and licensing
+## Reproduction notes
 
-- [Artifact manifest](artifact_manifest.json): exact file sizes and SHA256.
-- [Verification record](docs/RELEASE_VERIFICATION.md): package checks and their limits.
-- [Evaluation protocols](docs/EVALUATION_PROTOCOLS.md): splits, metrics and evaluation settings.
-- [Third-party notices](THIRD_PARTY_NOTICES.md): original licenses remain in force.
+This release provides inference code, configurations and model artifacts.
+It is not a complete from-scratch training recipe. Environment versions and
+checks are documented in the benchmark guides; a clean GPU reproduction on
+new hardware has not been independently validated.
 
-Datasets, metric caches, credentials, optimizer states and private experiment
-records are not distributed. Obtain data and pretrained dependencies under
-their providers' terms. The root code license does not relicense dataset images
-or upstream pretrained weights. Only load trusted, hash-verified pickle files.
+[Evaluation protocols](docs/EVALUATION_PROTOCOLS.md) ·
+[Artifact hashes](artifact_manifest.json) ·
+[Release verification](docs/RELEASE_VERIFICATION.md)
 
-## Acknowledgements
+## Acknowledgements and license
 
-We thank [iPad](https://github.com/Kguo-cs/iPad),
-[Drive-JEPA](https://github.com/linhanwang/Drive-JEPA),
-[NAVSIM](https://github.com/autonomousvision/navsim),
-[MomAD](https://github.com/adept-thu/MomAD),
-[SparseDrive](https://github.com/swc-17/SparseDrive), and V-JEPA 2.
-README organization is inspired by [DiffusionDrive](https://github.com/hustvl/DiffusionDrive);
-project presentation is also inspired by MomAD and KineWorld.
-Their videos and media are not copied into this release.
+We thank iPad, Drive-JEPA, NAVSIM, MomAD, SparseDrive and V-JEPA 2.
+See [third-party notices](THIRD_PARTY_NOTICES.md) for sources and licenses.
+Code is released under [Apache-2.0](LICENSE); dataset images and upstream
+artifacts retain their respective terms.
 
 ## Citation
 

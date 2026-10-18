@@ -48,6 +48,9 @@ Use only trusted pickle/checkpoint files and check their published hashes.
 
 ## NAVTEST
 
+Run from `ActWorld-JEPA/navsim_v2/` with the v2 environment active, after
+[downloading and verifying the required weights](../docs/GETTING_STARTED.md#download-the-weights).
+
 ```bash
 export ACTWORLD_WEIGHTS=/absolute/path/to/weights
 export OPENSCENE_DATA_ROOT=/absolute/path/to/navsim-data

@@ -41,6 +41,8 @@ The original ResNet initialization file belongs at
 
 ## Evaluate
 
+Run from `ActWorld-JEPA/nuscenes/` after [downloading and verifying the weights](../docs/GETTING_STARTED.md#download-the-weights).
+
 ```bash
 export ACTWORLD_WEIGHTS=/absolute/path/to/downloaded/weights
 export CUDA_VISIBLE_DEVICES=0
@@ -49,7 +51,10 @@ bash run_evaluation.sh
 
 The launcher uses one GPU, seed 41, deterministic mode and four data workers.
 It saves predictions and reports L2 (meters) and box collision rate (percent)
-at 1–6 seconds. The reported mean averages all six horizons.
+at 1–6 seconds. The reported mean averages all six horizons. Predictions are
+written to `work_dirs/actworld_nuscenes_predictions.pkl`; evaluation output
+is printed to the terminal. This fixed prediction path is reused on another
+run, so preserve it first if you need to retain earlier predictions.
 
 Use the released configuration and execution settings for evaluation.
 Checkpoint checks and additional evaluation details are documented in

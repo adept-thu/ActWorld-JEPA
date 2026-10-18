@@ -19,6 +19,9 @@ examples do not download benchmark data or submit anything to a leaderboard.
 ## Download the weights
 
 No Hugging Face token is required to download this public repository.
+Run these blocks from `ActWorld-JEPA/`, with your benchmark environment active.
+If installation left you in `navsim/`, `navsim_v2/` or `nuscenes/`, first run
+`cd ..`. After downloading, return to that benchmark directory for evaluation.
 
 ```bash
 python -m pip install huggingface_hub
