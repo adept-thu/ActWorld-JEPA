@@ -7,6 +7,12 @@ on:
 jobs:
   release-audit:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONPATH: navsim
+      OMP_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+      CUDA_VISIBLE_DEVICES: ""
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -14,5 +20,8 @@ jobs:
           python-version: "3.9"
       - run: python tools/audit_release.py
       - run: python -m compileall -q navsim/navsim navsim/scripts tools tests
-      - run: pip install pytest
+      - name: Install CPU inference-test dependencies
+        run: |
+          python -m pip install pytest numpy==1.26.4 scipy==1.11.4 scikit-learn==1.2.2
+          python -m pip install torch==2.1.0 --index-url https://download.pytorch.org/whl/cpu
       - run: pytest -q tests
