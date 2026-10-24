@@ -63,6 +63,12 @@ NAVSIM v2 scoring implementation and nuScenes averaging convention.
 
 ## Getting started
 
+**Optional NAVSIM v1 acceleration:** the [FP32 inference runtime](docs/NAVSIM_V1_INFERENCE_ACCELERATION.md)
+provides equivalence-gated CUDA graphs and CPU selector kernels. Audited RTX 4090
+timings: **21.48 model FPS / 30.91 Plan FPS** (batch 1). The complete local
+12,146-scene regression has zero failures and unchanged per-scene scores;
+see the guide for timing boundaries and aggregate-NAVTEST calibration caveats.
+
 **Run the released models without retraining.** You need Linux, Conda, an NVIDIA
 GPU, and the dataset for your chosen benchmark. Use a separate environment
 for NAVSIM v1, NAVSIM v2, and nuScenes.

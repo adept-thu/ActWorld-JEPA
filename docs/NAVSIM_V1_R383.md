@@ -97,6 +97,13 @@ also fails closed on missing, duplicate, or unexpected scene tokens.
 The `.ckpt`, `.pt`, and `.pkl` files use Python/PyTorch serialization. Verify
 their SHA256 values before use and load them only from this official release.
 
+## Optional inference acceleration
+
+For opt-in acceleration without changing the frozen artifacts, see
+[FP32 inference acceleration](NAVSIM_V1_INFERENCE_ACCELERATION.md).
+Existing prediction and scoring launchers remain unchanged. Install the runtime
+only inside a dedicated worker after its real-input equivalence gate.
+
 ## Training protocol
 
 All trainable neural modules and frozen selector estimators in this release

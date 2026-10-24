@@ -1,5 +1,25 @@
 # Release verification
 
+## 2026-10-24 opt-in r383 inference acceleration
+
+- The packaged runtime passed **19 CPU/release-contract tests**, plus **one
+  explicitly enabled CUDA graph smoke test** on an idle RTX 4090. The latter
+  checks fresh-input replay, retained output ownership, and shape-specific
+  capture. No unrelated GPU process was stopped.
+- Native C arithmetic is unchanged from the audited deployment; compilation
+  now uses private temporary storage. Python 3.9 syntax, package inclusion,
+  exact public planner method bodies, and fail-closed source guards were checked.
+- The release privacy/artifact audit passed. No private paths, raw per-scene
+  records, credentials, pretrained weights, or compiled binaries were added.
+- The separate frozen deployment completed a 12,146-scene local regression
+  with zero failures and exact per-scene score equality. This result, its
+  hashes, timing boundaries, and test-feedback-calibration caveats are recorded
+  in [the acceleration guide](NAVSIM_V1_INFERENCE_ACCELERATION.md).
+- The packaged public source has **not** received a second full GPU regression.
+  Its inference methods match the audited snapshot, but installation-specific
+  real-NAVTRAIN equivalence checking remains mandatory. Defaults and artifact
+  provenance checks are unchanged; existing evaluation launchers stay eager.
+
 ## 2026-10-17 documentation and distribution audit
 
 - All eight Hugging Face artifacts are publicly listed. Their LFS SHA256 and

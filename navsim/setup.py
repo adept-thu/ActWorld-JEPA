@@ -17,6 +17,7 @@ setuptools.setup(
     python_requires=">=3.9",
     packages=setuptools.find_packages(script_folder),
     package_dir={"": "."},
+    package_data={"navsim.agents.actworld_jepa.inference": ["fast_hist.c"]},
     classifiers=[
         "Programming Language :: Python :: 3.9",
         "Operating System :: OS Independent",

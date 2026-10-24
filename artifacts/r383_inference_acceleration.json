@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "model": "ActWorld-JEPA NAVSIM v1 r383",
+  "scope": "Archived local frozen-deployment regression, not leaderboard or untouched-test evaluation",
+  "full_retest": {
+    "date": "2026-10-24",
+    "exit_code": 0,
+    "complete": true,
+    "successful": 12146,
+    "total": 12146,
+    "failed": 0,
+    "unique_scenarios": 12146,
+    "original_token_set_identical": true,
+    "finite_scores": true,
+    "pdms": 94.05183397465883,
+    "mean_components": {
+      "no_at_fault_collisions": 0.990120204182447,
+      "drivable_area_compliance": 0.984192326691915,
+      "ego_progress": 0.9219320062402496,
+      "time_to_collision_within_bound": 0.9605631483616005,
+      "comfort": 0.9991766836818706,
+      "driving_direction_compliance": 0.9440144903671991,
+      "score": 0.9405183397465884
+    },
+    "per_scenario_comparison": {
+      "no_at_fault_collisions": {
+        "changed_tokens_at_1e_10": 0,
+        "max_abs": 0
+      },
+      "drivable_area_compliance": {
+        "changed_tokens_at_1e_10": 0,
+        "max_abs": 0
+      },
+      "ego_progress": {
+        "changed_tokens_at_1e_10": 0,
+        "max_abs": 0
+      },
+      "time_to_collision_within_bound": {
+        "changed_tokens_at_1e_10": 0,
+        "max_abs": 0
+      },
+      "comfort": {
+        "changed_tokens_at_1e_10": 0,
+        "max_abs": 0
+      },
+      "driving_direction_compliance": {
+        "changed_tokens_at_1e_10": 0,
+        "max_abs": 0
+      },
+      "score": {
+        "changed_tokens_at_1e_10": 0,
+        "max_abs": 0
+      }
+    },
+    "source_and_artifact_manifest_unchanged": true,
+    "csv_sha256": "9c271c447c02341f7cdb8eb7759ba41b8d395184abbe998cb383761f01452bb4",
+    "trajectories_sha256": "edc9c870501a1f84bacb71a999aa0eac4fd1aa626bf3973762b7874a3b7f137e",
+    "harness_sha256": "ca1a23f9b651237686fe84ab1148f7a5a3dbe61055d1e91bec6ff17fe964614d"
+  },
+  "validation": {
+    "validation_inputs": 64,
+    "exact_outputs": true,
+    "native_models": 20,
+    "trees": 4130,
+    "graph_callables": 3,
+    "cpu_post": true,
+    "precision": "FP32",
+    "pdms_rerun": false,
+    "split": "NAVTRAIN",
+    "unique_logs": 64,
+    "exact_api_trajectories": 64
+  },
+  "timing": {
+    "date": "2026-10-23",
+    "hardware": "NVIDIA RTX 4090",
+    "torch": "2.1.0+cu121",
+    "precision": "FP32; matmul TF32 disabled; original cuDNN setting unchanged",
+    "batch_size": 1,
+    "cpu_math_threads": 1,
+    "model_fps": 21.480389584053032,
+    "plan_fps": 30.911049102097657,
+    "complete_api_fps": 19.234922170684143,
+    "model_runs": 5,
+    "model_inputs_per_run": 64,
+    "api_runs": 3,
+    "api_inputs_per_run": 8,
+    "statistic": "Median run throughput; CUDA-synchronized wall clock; warm-up excluded; outliers retained",
+    "model_boundary": "Includes perception and all selectors; excludes CPU feature construction, transfer, disk I/O, simulation",
+    "plan_boundary": "Exact cached perception outputs for timing only; all remaining forward operations retained",
+    "api_boundary": "Includes feature construction, transfers, selectors, CPU trajectory; excludes disk I/O and simulation",
+    "production_prediction_caching": false,
+    "timing_log_sha256": "5606b121c810e6672613acb1ddd2ed2bc543228c1ef7f8e75c46b4022fb888f3"
+  },
+  "neural_parameters": 324164342,
+  "dim": 256,
+  "protocol": "Frozen r383 full NAVTEST regression; selector historically calibrated with aggregate NAVTEST feedback; not an untouched-test result.",
+  "untouched_test": false,
+  "cross_hardware_comparison_controlled": false,
+  "independent_full_gpu_retest_of_packaged_release": false,
+  "release_notes": "Relative imports, native library temporary build, source guards and precision-setting guards added during packaging. Public planner inference AST matches audited source; loader provenance checks preserved. Run prepare() against real NAVTRAIN inputs on each installation."
+}
