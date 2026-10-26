@@ -5,22 +5,37 @@ type: software
 authors:
   - family-names: Song
     given-names: Ziying
+    affiliation: Nanyang Technological University
   - family-names: Zhang
     given-names: Shengkai
+    affiliation: Beijing Jiaotong University
   - family-names: Jia
     given-names: Caiyan
+    affiliation: Beijing Jiaotong University
   - family-names: Yang
     given-names: Lei
+    affiliation: Nanyang Technological University
   - family-names: Liu
     given-names: Lin
+    affiliation: Dalian University of Technology
+  - family-names: Liu
+    given-names: Yuchen
+    affiliation: North University of China
+  - family-names: Li
+    given-names: Zirui
+    affiliation: Nanyang Technological University
   - family-names: Wang
     given-names: Li
+    affiliation: Beijing Institute of Technology
   - family-names: Luo
     given-names: Yadan
+    affiliation: The University of Queensland
   - family-names: Wang
     given-names: Gang
+    affiliation: NingboTech University
   - family-names: Lv
     given-names: Chen
+    affiliation: Nanyang Technological University
 repository-code: "https://github.com/adept-thu/ActWorld-JEPA"
 license: Apache-2.0
 version: 2.0.0

@@ -3,7 +3,14 @@
 # ActWorld-JEPA
 ### Action-Conditioned JEPA World Models Meet Latent Planning<br>for End-to-End Autonomous Driving
 
-**Ziying Song · Shengkai Zhang · Caiyan Jia · Lei Yang · Lin Liu · Li Wang · Yadan Luo · Gang Wang · Chen Lv**
+**Ziying Song<sup>1,†</sup> · Shengkai Zhang<sup>2,†</sup> · Caiyan Jia<sup>2</sup> · Lei Yang<sup>1</sup> · Lin Liu<sup>3</sup><br>Yuchen Liu<sup>4</sup> · Zirui Li<sup>1</sup> · Li Wang<sup>5</sup> · Yadan Luo<sup>6</sup> · Gang Wang<sup>7</sup> · Chen Lv<sup>1,*</sup>**
+
+<sup>1</sup>Nanyang Technological University · <sup>2</sup>Beijing Jiaotong University<br>
+<sup>3</sup>Dalian University of Technology · <sup>4</sup>North University of China<br>
+<sup>5</sup>Beijing Institute of Technology · <sup>6</sup>The University of Queensland<br>
+<sup>7</sup>NingboTech University
+
+† Intern of Horizon Robotics · * Corresponding author
 
 [![Project page](https://img.shields.io/badge/Project-Page-167D7F)](https://adept-thu.github.io/ActWorld-JEPA/)
 [![Hugging Face](https://img.shields.io/badge/🤗-Checkpoints-FFD21E)](https://huggingface.co/shengkaizhang/ActWorld-JEPA)
