@@ -3,14 +3,18 @@
 # ActWorld-JEPA
 ### Action-Conditioned JEPA World Models Meet Latent Planning<br>for End-to-End Autonomous Driving
 
-**Ziying Song<sup>1,†</sup> · Shengkai Zhang<sup>2,†</sup> · Caiyan Jia<sup>2</sup> · Lei Yang<sup>1</sup> · Lin Liu<sup>3</sup><br>Yuchen Liu<sup>4</sup> · Zirui Li<sup>1</sup> · Li Wang<sup>5</sup> · Yadan Luo<sup>6</sup> · Gang Wang<sup>7</sup> · Chen Lv<sup>1,*</sup>**
+**[Ziying Song](https://openreview.net/profile?id=~Ziying_Song1)<sup>1,†</sup> · [Shengkai Zhang](https://openreview.net/profile?id=~Shengkai_Zhang4)<sup>2,†</sup> · [Caiyan Jia](https://openreview.net/profile?id=~Caiyan_Jia1)<sup>2</sup> · [Lei Yang](https://openreview.net/profile?id=~Lei_Yang10)<sup>1</sup> · [Lin Liu](https://openreview.net/profile?id=~Lin_Liu12)<sup>3</sup><br>[Yuchen Liu](https://openreview.net/profile?id=~Yuchen_Liu47)<sup>4</sup> · [Ziyang Liu](https://openreview.net/profile?id=~Ziyang_Liu3)<sup>5</sup> · [Zirui Li](https://openreview.net/profile?id=~Zirui_Li9)<sup>1</sup> · [Gang Wang](https://openreview.net/profile?id=~Gang_Wang56)<sup>6</sup> · [Peiliang Wu](https://openreview.net/profile?id=~Peiliang_Wu2)<sup>7</sup><br>[Li Wang](https://openreview.net/profile?id=~Li_Wang15)<sup>8</sup> · [Yadan Luo](https://openreview.net/profile?id=~Yadan_Luo1)<sup>9</sup> · [Chen Lv](https://openreview.net/profile?id=~Chen_Lv1)<sup>1,*</sup>**
 
 <sup>1</sup>Nanyang Technological University · <sup>2</sup>Beijing Jiaotong University<br>
 <sup>3</sup>Dalian University of Technology · <sup>4</sup>North University of China<br>
-<sup>5</sup>Beijing Institute of Technology · <sup>6</sup>The University of Queensland<br>
-<sup>7</sup>NingboTech University
+<sup>5</sup>Tsinghua University · <sup>6</sup>NingboTech University<br>
+<sup>7</sup>Yan Shan University · <sup>8</sup>Beijing Institute of Technology<br>
+<sup>9</sup>The University of Queensland
 
-† Intern of Horizon Robotics · * Corresponding author
+† Co-first authors · * Corresponding author
+
+[![arXiv](https://img.shields.io/badge/arXiv-2611.16579-b31b1b)](https://arxiv.org/abs/2611.16579)
+[Paper (HTML)](https://arxiv.org/html/2611.16579v1) · [PDF](https://arxiv.org/pdf/2611.16579)
 
 [![Project page](https://img.shields.io/badge/Project-Page-167D7F)](https://adept-thu.github.io/ActWorld-JEPA/)
 [![Hugging Face](https://img.shields.io/badge/🤗-Checkpoints-FFD21E)](https://huggingface.co/shengkaizhang/ActWorld-JEPA)
@@ -137,4 +141,18 @@ artifacts retain their respective terms.
 
 ## Citation
 
-See [CITATION.cff](CITATION.cff) for the manuscript's citation metadata.
+If you use ActWorld-JEPA, please cite the [paper](https://arxiv.org/abs/2611.16579):
+
+```bibtex
+@misc{song2026actworldjepa,
+  title={ActWorld-JEPA: Action-Conditioned JEPA World Models Meet Latent Planning for End-to-End Autonomous Driving},
+  author={Ziying Song and Shengkai Zhang and Caiyan Jia and Lei Yang and Lin Liu and Yuchen Liu and Ziyang Liu and Zirui Li and Gang Wang and Peiliang Wu and Li Wang and Yadan Luo and Chen Lv},
+  year={2026},
+  eprint={2611.16579},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2611.16579}
+}
+```
+
+See [CITATION.cff](CITATION.cff) for machine-readable citation metadata.

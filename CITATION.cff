@@ -21,18 +21,24 @@ authors:
   - family-names: Liu
     given-names: Yuchen
     affiliation: North University of China
+  - family-names: Liu
+    given-names: Ziyang
+    affiliation: Tsinghua University
   - family-names: Li
     given-names: Zirui
     affiliation: Nanyang Technological University
+  - family-names: Wang
+    given-names: Gang
+    affiliation: NingboTech University
+  - family-names: Wu
+    given-names: Peiliang
+    affiliation: Yan Shan University
   - family-names: Wang
     given-names: Li
     affiliation: Beijing Institute of Technology
   - family-names: Luo
     given-names: Yadan
     affiliation: The University of Queensland
-  - family-names: Wang
-    given-names: Gang
-    affiliation: NingboTech University
   - family-names: Lv
     given-names: Chen
     affiliation: Nanyang Technological University
@@ -40,3 +46,55 @@ repository-code: "https://github.com/adept-thu/ActWorld-JEPA"
 license: Apache-2.0
 version: 2.0.0
 date-released: 2026-10-16
+url: "https://adept-thu.github.io/ActWorld-JEPA/"
+preferred-citation:
+  type: article
+  title: "ActWorld-JEPA: Action-Conditioned JEPA World Models Meet Latent Planning for End-to-End Autonomous Driving"
+  authors:
+    - family-names: Song
+      given-names: Ziying
+      affiliation: Nanyang Technological University
+    - family-names: Zhang
+      given-names: Shengkai
+      affiliation: Beijing Jiaotong University
+    - family-names: Jia
+      given-names: Caiyan
+      affiliation: Beijing Jiaotong University
+    - family-names: Yang
+      given-names: Lei
+      affiliation: Nanyang Technological University
+    - family-names: Liu
+      given-names: Lin
+      affiliation: Dalian University of Technology
+    - family-names: Liu
+      given-names: Yuchen
+      affiliation: North University of China
+    - family-names: Liu
+      given-names: Ziyang
+      affiliation: Tsinghua University
+    - family-names: Li
+      given-names: Zirui
+      affiliation: Nanyang Technological University
+    - family-names: Wang
+      given-names: Gang
+      affiliation: NingboTech University
+    - family-names: Wu
+      given-names: Peiliang
+      affiliation: Yan Shan University
+    - family-names: Wang
+      given-names: Li
+      affiliation: Beijing Institute of Technology
+    - family-names: Luo
+      given-names: Yadan
+      affiliation: The University of Queensland
+    - family-names: Lv
+      given-names: Chen
+      affiliation: Nanyang Technological University
+  journal: arXiv
+  year: 2026
+  month: 11
+  url: "https://arxiv.org/abs/2611.16579"
+  identifiers:
+    - type: other
+      value: "arXiv:2611.16579"
+      description: arXiv preprint identifier
