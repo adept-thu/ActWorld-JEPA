@@ -55,7 +55,7 @@ deployment steps. The learned selectors are required, not optional extras.
 
 | Benchmark / split | Metric | Result | Weights | Guide |
 |:--|:--|--:|:--|:--|
-| NAVSIM v1 NAVTEST | Leaderboard PDMS ↑ | **90.07** | [Model bundle](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_jepa_navsim_v1_r383_bundle.tar.gz) (model + 4 selectors) | [v1 guide](docs/NAVSIM_V1_R383.md) |
+| NAVSIM v1 NAVTEST | Leaderboard PDMS ↑ | **94.1** | [Model bundle](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_jepa_navsim_v1_r383_bundle.tar.gz) (model + 4 selectors) | [v1 guide](docs/NAVSIM_V1_R383.md) |
 | NAVSIM v2 NAVTEST | EPDMS ↑ | **91.6** | [Model](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_navsim_v2.ckpt) + [3 selectors](docs/GETTING_STARTED.md#download-the-weights) | [v2 guide](navsim_v2/README.md#navtest) |
 | NAVSIM v2 NAVHARD | Combined EPDMS ↑ | **42.7** | [Same model](https://huggingface.co/shengkaizhang/ActWorld-JEPA/resolve/main/actworld_navsim_v2.ckpt) + [all 5 selectors](docs/GETTING_STARTED.md#download-the-weights) | [NAVHARD guide](navsim_v2/README.md#navhard) |
 

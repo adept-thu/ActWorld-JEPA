@@ -42,7 +42,7 @@ in [the regression record](../artifacts/r383_inference_acceleration.json).
 
 The historical r383 selector weights/threshold used aggregate NAVTEST feedback
 for calibration. This is **not an untouched-test result**. The local score does
-not replace the **90.07 leaderboard** result reported elsewhere in this release.
+not replace the **94.1 leaderboard** result reported elsewhere in this release.
 No NAVTEST samples were used for acceleration tuning or the deployment gate.
 
 The full regression applies to the archived deployment snapshot. This release

@@ -4,7 +4,7 @@
 
 | Benchmark | Metric | Result |
 |---|---|---:|
-| NAVSIM v1 NAVTEST | Leaderboard PDMS ↑ | **90.07** |
+| NAVSIM v1 NAVTEST | Leaderboard PDMS ↑ | **94.1** |
 | NAVSIM v2 NAVTEST | EPDMS ↑ | **91.6** |
 | NAVSIM v2 NAVHARD | Combined EPDMS ↑ | **42.7** |
 

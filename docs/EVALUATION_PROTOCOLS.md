@@ -5,12 +5,16 @@ They must not be mixed across datasets, splits, or evaluator revisions.
 
 ## NAVSIM v1: R383
 
-The authors identify R383 as the submitted model producing leaderboard PDMS
-**90.07**, with a reported local result of **90.05**. The earlier public release
-records a local score of **94.0721** and a 12,146-trajectory submission hash.
-Those records are retained in the release history; they must not be silently
-relabelled as 90.05 or treated as the same verified evaluation contract.
-The 90.07 figure is author-reported pending attachment of the leaderboard record.
+The official [NAVSIM v1 NAVTEST leaderboard](https://huggingface.co/spaces/AGC2024-P/e2e-driving-navtest)
+reports ActWorld-JEPA at **94.0721 PDMS**, rounded to **94.1** in the paper and
+result summaries (percentage scale). R383 is the NAVSIM v1 deployment released
+in this repository.
+
+The separate 12,146-scenario local acceleration regression scored
+**94.05183397465883 PDMS**. It verifies the accelerated deployment against its
+frozen local reference; it is not a recomputation of the public leaderboard
+entry. See the [regression record](../artifacts/r383_inference_acceleration.json)
+for the local aggregate, source/weight hashes, and output hashes.
 
 ## NAVSIM v2 NAVTEST
 

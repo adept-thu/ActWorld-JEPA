@@ -13,7 +13,9 @@ online planning loop.
 This guide is executed from the repository root unless a `cd` is shown.
 ## Model and checkpoint
 
-The NAVSIM v1 model achieves **90.07 PDMS** on the NAVTEST leaderboard.
+The NAVSIM v1 model achieves **94.1 PDMS** on the
+[official NAVTEST leaderboard](https://huggingface.co/spaces/AGC2024-P/e2e-driving-navtest)
+(**94.0721** before rounding).
 Download the model and its four required selectors from
 [Hugging Face](https://huggingface.co/shengkaizhang/ActWorld-JEPA).
 Follow the [download instructions](GETTING_STARTED.md#download-the-weights)
