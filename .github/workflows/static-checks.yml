@@ -6,7 +6,8 @@ on:
 
 jobs:
   release-audit:
-    runs-on: ubuntu-latest
+    # Python 3.9 is unavailable on the Ubuntu 26.04 runner image.
+    runs-on: ubuntu-22.04
     timeout-minutes: 10
     env:
       PYTHONPATH: navsim
